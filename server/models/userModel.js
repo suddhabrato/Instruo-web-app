@@ -32,6 +32,18 @@ const userSchema = new mongoose.Schema({
     minlength: 8,
     select: false,
   },
+  college: {
+    type: String,
+    required: [true, "Please tell us your college name"],
+  },
+  dept: {
+    type: String,
+    required: [true, "Please enter your department"],
+  },
+  academic_year: {
+    type: Number,
+    required: [true, "Enter your year"],
+  },
 });
 
 userSchema.pre("save", async function (next) {
