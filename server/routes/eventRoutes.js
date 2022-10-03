@@ -1,11 +1,18 @@
 import { Router } from "express";
-import { addParticipant, register } from "../controllers/eventController";
-import { restrictTo } from "../controllers/authController";
+import { addParticipant, deleteEvent, getAllEvents, getEventById, register, updateEvent } from "../controllers/eventController";
+import { restrictTo, protect } from "../controllers/authController";
 
 const router = Router();
 
-router.use("/participant/register", addParticipant);
+router.get("/", getAllEvents);
+router.get("/:id", getEventById);
+
+router.use(protect);
+router.post("/addParticipants", addParticipant);
+
 router.use(restrictTo("admin"));
-router.post("/event/register", register);
+router.post("/register", register);
+router.put("/update/:id", updateEvent);
+router.delete("/delete/:id", deleteEvent);
 
 export default router;
