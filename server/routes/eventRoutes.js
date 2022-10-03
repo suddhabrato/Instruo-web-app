@@ -1,10 +1,11 @@
-const express = require("express");
-const eventController = require("../controllers/eventController");
-const authController = require("../controllers/authController");
+import { Router } from "express";
+import { addParticipant, register } from "../controllers/eventController";
+import { restrictTo } from "../controllers/authController";
 
-const router = express.Router();
+const router = Router();
 
-router.use(authController.restrictTo("admin"));
-router.post("/event/register", eventController.register);
+router.use("/participant/register", addParticipant);
+router.use(restrictTo("admin"));
+router.post("/event/register", register);
 
-module.exports = router;
+export default router;
