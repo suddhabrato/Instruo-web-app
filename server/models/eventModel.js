@@ -8,11 +8,11 @@ const eventSchema = new Schema({
     required: [true, "Event Name"],
   },
   startDate: {
-    type: String,
+    type: Date,
     required: [true, "Please provide event date"],
   },
   participants: [{
-    type: ObjectId, 
+    type: Schema.Types.ObjectId, 
     ref: User,
   }],
 });
