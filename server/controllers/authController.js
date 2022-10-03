@@ -17,13 +17,18 @@ const createSendToken = (user, statusCode, res) => {
   // Don't show user password in res
   user.password = undefined;
 
-  res.status(statusCode).json({
-    status: "success",
-    token: token,
-    data: {
-      user,
-    },
-  });
+  res
+    .cookie("access_token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+    })
+    .status(statusCode)
+    .json({
+      status: "success",
+      data: {
+        user,
+      },
+    });
 };
 
 exports.signup = asyncHandler(async (req, res, next) => {
@@ -54,14 +59,7 @@ exports.login = asyncHandler(async (req, res, next) => {
 });
 
 exports.protect = asyncHandler(async (req, res, next) => {
-  // 1) Get token and check if it's in correct format { "authorization": "Bearer token" }
-  let token;
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
-  ) {
-    token = req.headers.authorization.split(" ")[1];
-  }
+  const token = req.cookies.access_token;
 
   if (!token) {
     return next(
@@ -69,10 +67,10 @@ exports.protect = asyncHandler(async (req, res, next) => {
     );
   }
 
-  // 2) Verification of token
+  // Verification of token
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
 
-  // 3) Check if user exists
+  // Check if user exists
   const user = await User.findById(decoded.id);
   if (!user) {
     return next(new AppError("Not authorised, invalid token", 401));
@@ -81,6 +79,13 @@ exports.protect = asyncHandler(async (req, res, next) => {
   // Grant Access To Protected Route
   req.user = user;
   next();
+});
+
+exports.logout = asyncHandler(async (req, res, next) => {
+  res.clearCookie("access_token").status(200).json({
+    status: "success",
+    message: "Logged out successfully",
+  });
 });
 
 exports.restrictTo =
