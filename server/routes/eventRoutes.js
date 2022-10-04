@@ -1,6 +1,6 @@
-import { Router } from "express";
-import { addParticipant, deleteEvent, getAllEvents, getEventById, register, updateEvent } from "../controllers/eventController";
-import { restrictTo, protect } from "../controllers/authController";
+const { Router } = require("express")
+const { addParticipant, deleteEvent, getAllEvents, getEventById, getEventParticpants, register, updateEvent } = require("../controllers/eventController")
+const { restrictTo, protect } = require("../controllers/authController")
 
 const router = Router();
 
@@ -14,5 +14,6 @@ router.use(restrictTo("admin"));
 router.post("/register", register);
 router.put("/update/:id", updateEvent);
 router.delete("/delete/:id", deleteEvent);
+router.get("/:id/participants", getEventParticpants);
 
-export default router;
+module.exports = router;

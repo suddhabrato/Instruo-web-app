@@ -1,7 +1,7 @@
-import { Schema, model } from "mongoose";
-import User from "../models/userModel";
+const mongoose = require("mongoose")
+const User = require("../models/userModel")
 
-const eventSchema = new Schema({
+const eventSchema = new mongoose.Schema({
   title: {
     type: String,
     unique: true,
@@ -25,12 +25,21 @@ const eventSchema = new Schema({
   },
   participants: [
     {
-      type: Schema.Types.ObjectId, 
-      ref: User,
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: "User",
     }
   ],
 });
 
-const Event = model("Event", eventSchema);
+eventSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: "participants",
+    select: "-__v -events",
+  });
 
-export default Event;
+  next();
+});
+
+const Event = mongoose.model("Event", eventSchema);
+
+module.exports = Event;

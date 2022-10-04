@@ -1,9 +1,9 @@
-import asyncHandler from "express-async-handler";
-import AppError from "../utils/appError";
-import Event from "../models/eventModel"
-import User from "../models/userModel"
+const asyncHandler = require( "express-async-handler")
+const AppError = require( "../utils/appError")
+const Event = require( "../models/eventModel")
+const User = require( "../models/userModel")
 
-export const addParticipant = asyncHandler(async (req, res, next) => {
+exports.addParticipant = asyncHandler(async (req, res, next) => {
     const { eventId } = req.body;
     const event = await Event.findById(eventId);
     if (!event) {
@@ -24,7 +24,7 @@ export const addParticipant = asyncHandler(async (req, res, next) => {
     });
 });
 
-export const register = asyncHandler(async (req, res, next) => {
+exports.register = asyncHandler(async (req, res, next) => {
     const { title } = req.body;
     const foundEvent = await Event.findOne({title: title});
     if (foundEvent) {
@@ -40,7 +40,7 @@ export const register = asyncHandler(async (req, res, next) => {
 
 });
 
-export const getAllEvents = asyncHandler(async (res) => {
+exports.getAllEvents = asyncHandler(async (req, res, next) => {
     const events = await Event.find({});
   
     res.status(200).json({
@@ -48,8 +48,8 @@ export const getAllEvents = asyncHandler(async (res) => {
       events,
     });
 });
-  
-export const getEventById = asyncHandler(async (req, res, next) => {
+
+exports.getEventById = asyncHandler(async (req, res, next) => {
     const event = await Event.findById(req.params.id);
     
     if (!event) {
@@ -64,7 +64,7 @@ export const getEventById = asyncHandler(async (req, res, next) => {
     });
 });
 
-export const updateEvent = asyncHandler(async (req, res, next) => {
+exports.updateEvent = asyncHandler(async (req, res, next) => {
     const event = await Event.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true,
@@ -80,7 +80,7 @@ export const updateEvent = asyncHandler(async (req, res, next) => {
     });    
 });
 
-export const deleteEvent = asyncHandler(async (req, res, next) => {
+exports.deleteEvent = asyncHandler(async (req, res, next) => {
     const event = await Event.findByIdAndDelete(req.params.id);
     
     if (!event) {
@@ -88,5 +88,20 @@ export const deleteEvent = asyncHandler(async (req, res, next) => {
     }
 
     res.status(204).json({
+    });
+});
+
+exports.getEventParticpants = asyncHandler(async (req, res, next) => {
+    const event = await Event.findById(req.params.id);
+    
+    if (!event) {
+      return next(new AppError("Event Does Not Exist", 404));
+    }
+
+    res.status(201).json({
+        status: "success",
+        data: {
+            participants: event.participants,
+        }
     });
 });
