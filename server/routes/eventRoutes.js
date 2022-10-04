@@ -1,19 +1,19 @@
-const { Router } = require("express")
-const { addParticipant, deleteEvent, getAllEvents, getEventById, getEventParticpants, register, updateEvent } = require("../controllers/eventController")
-const { restrictTo, protect } = require("../controllers/authController")
+const express = require("express");
+const eventController = require("../controllers/eventController");
+const authController = require("../controllers/authController");
 
-const router = Router();
+const router = express.Router();
 
-router.get("/", getAllEvents);
-router.get("/:id", getEventById);
+router.get("/", eventController.getAllEvents);
+router.get("/:id", eventController.getEventById);
 
-router.use(protect);
-router.post("/addParticipants", addParticipant);
+router.use(authController.protect);
+router.post("/register", eventController.registerForEvent);
 
-router.use(restrictTo("admin"));
-router.post("/register", register);
-router.put("/update/:id", updateEvent);
-router.delete("/delete/:id", deleteEvent);
-router.get("/:id/participants", getEventParticpants);
+router.use(authController.restrictTo("admin"));
+router.post("/create", eventController.createEvent);
+router.patch("/update/:id", eventController.updateEvent);
+router.delete("/delete/:id", eventController.deleteEvent);
+router.get("/:id/participants", eventController.getEventParticipants);
 
 module.exports = router;

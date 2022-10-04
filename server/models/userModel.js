@@ -44,6 +44,12 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Enter your year"],
   },
+  events: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: "Event",
+    },
+  ],
 });
 
 userSchema.pre("save", async function (next) {
