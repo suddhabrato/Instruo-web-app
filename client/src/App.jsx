@@ -30,10 +30,11 @@ const App = () => {
 						<div id="menu">
 							<ul>
 								<li>HOME</li>
-								<li>SERVICES</li>
 								<li>ABOUT</li>
-								<li>CONTACT</li>
-								<li>HELP</li>
+								<li>EVENTS</li>
+								<li>SPONSORS</li>
+								<li>LOG IN</li>
+								<li>SIGN UP</li>
 							</ul>
 						</div>
 					</div>
