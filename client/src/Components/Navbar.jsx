@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/logo.svg";
 
 const NavBar = () => {
   return (
@@ -64,7 +65,10 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Instruo</a>
+        <a className="btn btn-ghost normal-case text-xl">
+          <img src={logo} className="max-w-sm mx-3" width="25" height="25" />
+          Instruo
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">

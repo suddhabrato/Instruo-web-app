@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/logo.svg";
 
 const Hero = () => {
   return (
@@ -8,9 +9,15 @@ const Hero = () => {
         backgroundImage: `url("https://images.pexels.com/photos/599982/pexels-photo-599982.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1")`,
       }}
     >
-      <div className="hero-overlay bg-opacity-50"></div>
+      <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
+          <img
+            src={logo}
+            className="max-w-sm mx-auto"
+            width="25%"
+            height="25%"
+          />
           <h1 className="mb-5 text-5xl font-bold">Instruo 2k22</h1>
           <p className="mb-5">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
