@@ -1,20 +1,19 @@
-const mongoose = require("mongoose")
-const User = require("../models/userModel")
+const mongoose = require("mongoose");
 
 const eventSchema = new mongoose.Schema({
   title: {
     type: String,
-    unique: true,
-    required: [true, "Event Name"],
+    required: true,
   },
   category: {
     type: String,
     required: true,
   },
-  description: {
+  desc: {
     type: String,
     required: true,
   },
+  photo: String,
   startDate: {
     type: Date,
     required: true,
@@ -23,11 +22,34 @@ const eventSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  prize: {
+    type: String,
+  },
+  timeline: [
+    {
+      round_number: Number,
+      desc: String,
+      start: Date,
+      end: Date,
+    },
+  ],
+  contact: {
+    name: String,
+    phone: String,
+    email: String,
+  },
+  rules: [String],
+  faq: [
+    {
+      question: String,
+      answer: String,
+    },
+  ],
   participants: [
     {
-      type: mongoose.Schema.Types.ObjectId, 
+      type: mongoose.Schema.ObjectId,
       ref: "User",
-    }
+    },
   ],
 });
 
