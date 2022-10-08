@@ -10,7 +10,7 @@
 				stroke-dasharray: 2000;
 				stroke-dashoffset: 0;
 				<!-- change the below line of codes to support in all types of browser -->
-				-webkit-animation: dash 5s linear forwards;
+				-webkit-animation: dash 5s linear infinite alternate;
 				
 			}
 			@-webkit-keyframes dash{
