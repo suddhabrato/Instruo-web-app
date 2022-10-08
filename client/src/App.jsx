@@ -1,46 +1,27 @@
 import React from "react"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Register from "../Register"
+import Navbar from "./Components/Navbar"
+import About from "./Components/Home/About"
+import Hero from "./Components/Home/Hero"
+import Footer from "./Components/Footer"
+import Sponsors from "./Components/Home/Sponsors"
+import EventCards from "./Components/EventCards"
+import Home from "./Components/Home"
+import Events from "./Components/Events"
 
 const App = () => {
 	return (
-		<body>
-			<div id="main">
-				<div id="box1"></div>
-
-				<div id="box2">
-					<div id="text">
-						EXTREME <br /> UI DESIGN
-					</div>
-					<p id="para">
-						Lorem, ipsum dolor sit amet consectetur adipisicing
-						elit. Est aperiam cum perspiciatis consequatur fuga,
-						neque, nisi enim quos, amet sapiente ipsa quod
-						repellendus nesciunt dolor ea accusamus alias nam.
-						Similique delectus eum quos modi harum magnam,
-						perferendis distinctio natus assumenda ducimus quisquam
-						ab nostrum id nihil consequatur porro minima. Eaque.
-					</p>
-				</div>
-
-				<div id="box3">
-					<div id="container">
-						<div id="logo">
-							<img src="logo.png" />
-						</div>
-
-						<div id="menu">
-							<ul>
-								<li>HOME</li>
-								<li>ABOUT</li>
-								<li>EVENTS</li>
-								<li>SPONSORS</li>
-								<li>LOG IN</li>
-								<li>SIGN UP</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</body>
+		<div>
+			<BrowserRouter>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/events" element={<Events />} />
+				</Routes>
+				<Footer />
+			</BrowserRouter>
+		</div>
 	)
 }
 
