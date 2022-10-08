@@ -8,6 +8,7 @@ import Footer from "./Components/Footer"
 import Sponsors from "./Components/Home/Sponsors"
 import EventCards from "./Components/EventCards"
 import Home from "./Components/Home"
+import Events from "./Components/Events"
 
 const App = () => {
 	return (
@@ -16,6 +17,7 @@ const App = () => {
 				<Navbar />
 				<Routes>
 					<Route path="/" element={<Home />} />
+					<Route path="/events" element={<Events />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>

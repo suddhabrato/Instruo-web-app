@@ -13,6 +13,17 @@
 	-webkit-text-size-adjust: 100%;
 }
 
+::-webkit-scrollbar {
+	color: black;
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	color: white;
+	border-radius: 15px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
