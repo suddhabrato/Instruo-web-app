@@ -60,16 +60,14 @@ const NavBar = () => {
 						</li>
 					</ul>
 				</div>
-				<NavLink to="/">
-					<a className="btn btn-ghost normal-case text-xl">
-						<img
-							src={logo}
-							className="max-w-sm mx-3"
-							width="25"
-							height="25"
-						/>
-						Instruo
-					</a>
+				<NavLink to="/" className="btn btn-ghost normal-case text-xl">
+					<img
+						src={logo}
+						className="max-w-sm mx-3"
+						width="25"
+						height="25"
+					/>
+					Instruo
 				</NavLink>
 			</div>
 			<div className="navbar-center hidden lg:flex">
@@ -82,9 +80,8 @@ const NavBar = () => {
 					</li>
 					<li tabIndex={0}>
 						<NavLink to="/events">
-							<a>
-								Events
-								{/* <svg
+							Events
+							{/* <svg
 									className="fill-current"
 									xmlns="http://www.w3.org/2000/svg"
 									width="20"
@@ -92,7 +89,6 @@ const NavBar = () => {
 									viewBox="0 0 24 24">
 									<path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
 								</svg> */}
-							</a>
 						</NavLink>
 						{/* <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
 							<li>

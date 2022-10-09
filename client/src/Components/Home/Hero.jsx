@@ -1,18 +1,24 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { Canvas } from "react-three-fiber"
 
 import logo from "../../assets/logo.svg"
+import HeroAnim from "./HeroAnim"
 
 const Hero = () => {
 	return (
 		<div
 			className="hero min-h-screen -mt-[5rem] "
-			style={{
-				backgroundImage: `url("https://images.pexels.com/photos/599982/pexels-photo-599982.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1")`,
-			}}>
+			// style={{
+			// 	backgroundImage: `url("https://images.pexels.com/photos/599982/pexels-photo-599982.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1")`,
+			// }}
+		>
+			<Canvas>
+				<HeroAnim />
+			</Canvas>
 			<div className="hero-overlay bg-opacity-60"></div>
 			<div className="hero-content text-center text-neutral-content">
-				<div className="max-w-md">
+				<div className="max-w-md bg-base-300 p-5 rounded-lg backdrop-blur bg-opacity-10">
 					<img
 						src={logo}
 						className="max-w-sm mx-auto"
