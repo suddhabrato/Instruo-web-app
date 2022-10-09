@@ -17,7 +17,7 @@ const Sponsors = () => {
 							View all Sponsors
 						</button>
 					</div>
-					<div class="p-6 not-prose grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-4 my-10 gap-6">
+					<div className="p-6 not-prose grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-4 my-10 gap-6">
 						<SponsorCard />
 						<SponsorCard />
 						<SponsorCard />
