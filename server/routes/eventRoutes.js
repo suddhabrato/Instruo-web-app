@@ -9,6 +9,8 @@ router.get("/:id", eventController.getEventById);
 
 router.use(authController.protect);
 router.post("/register", eventController.registerForEvent);
+router.post("/registerTeam", eventController.createTeamForEvent);
+router.post("/joinTeam", eventController.joinTeamForEvent);
 
 router.use(authController.restrictTo("admin"));
 router.post("/create", eventController.createEvent);
