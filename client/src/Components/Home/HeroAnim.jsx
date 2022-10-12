@@ -8,7 +8,7 @@ const parameters = [
 	[0.5, 0xff9900, 1],
 	[0.75, 0xffaa00, 0.75],
 	[1, 0xffaa00, 0.5],
-	[1.25, 0x000833, 0.8],
+	[1.25, 0x000888, 0.8],
 	[3.0, 0xaaaaaa, 0.75],
 	[3.5, 0xffffff, 0.5],
 	[4.5, 0xffffff, 0.25],
@@ -45,7 +45,7 @@ function createGeometry() {
 }
 
 const HeroAnim = () => {
-    const myMesh = useRef()
+	const myMesh = useRef()
 	useFrame(() => {
 		const time = Date.now() * 0.0001
 
@@ -59,7 +59,7 @@ const HeroAnim = () => {
 					const scale =
 						object.userData.originalScale *
 						(i / 5 + 1) *
-						(1 + 0.5 * Math.sin(7 * time))
+						(1 + 0.45 * Math.sin(7 * time))
 
 					object.scale.x = object.scale.y = object.scale.z = scale
 				}

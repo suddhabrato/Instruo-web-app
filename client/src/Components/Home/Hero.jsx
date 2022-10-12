@@ -13,12 +13,13 @@ const Hero = () => {
 			// 	backgroundImage: `url("https://images.pexels.com/photos/599982/pexels-photo-599982.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1")`,
 			// }}
 		>
-			<Canvas>
-				<HeroAnim />
-			</Canvas>
-			<div className="hero-overlay bg-opacity-60"></div>
+			<div className="hero-overlay bg-black">
+				<Canvas>
+					<HeroAnim />
+				</Canvas>
+			</div>
 			<div className="hero-content text-center text-neutral-content">
-				<div className="max-w-md bg-base-300 p-5 rounded-lg backdrop-blur bg-opacity-10">
+				<div className="max-w-md text-white bg-slate-600 backdrop-blur-sm bg-opacity-10 p-5 rounded-lg">
 					<img
 						src={logo}
 						className="max-w-sm mx-auto"

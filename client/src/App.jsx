@@ -9,6 +9,8 @@ import Sponsors from "./Components/Home/Sponsors"
 import EventCards from "./Components/EventCards"
 import Home from "./Components/Home"
 import Events from "./Components/Events"
+import SignUp from "./Components/AuthPage/SignUp"
+import LogIn from "./Components/AuthPage/LogIn"
 
 const App = () => {
 	return (
@@ -18,6 +20,8 @@ const App = () => {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/events" element={<Events />} />
+					<Route path="/signup" element={<SignUp />} />
+					<Route path="/login" element={<LogIn />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>
