@@ -1,4 +1,5 @@
 const asyncHandler = require("express-async-handler");
+const { uuid } = require("uuidv4");
 const AppError = require("../utils/appError");
 const Event = require("../models/eventModel");
 const User = require("../models/userModel");
@@ -25,6 +26,63 @@ exports.registerForEvent = asyncHandler(async (req, res, next) => {
     status: "success",
     message: "Registration Successful",
   });
+});
+
+exports.createTeamForEvent = asyncHandler(async (req, res, next) => {
+  const { eventId } = req.body;
+  const event = await Event.findById(eventId);
+  if (!event) {
+    return next(new AppError("Event Does Not Exist", 404));
+  }
+
+  const { teamName, college, participantId } = req.body;
+  const teamId = uuid();
+  event.teams.push({
+    teamId: teamId,
+    teamName: teamName,
+    college: college,
+    participants: [participantId],
+  });
+  await event.save();
+
+  res.status(201).json({
+    status: "success",
+    message: "Registration Successful",
+    eventId,
+    teamId,
+  });
+});
+
+exports.joinTeamForEvent = asyncHandler(async (req, res, next) => {
+  const { eventId, teamId, participantId, college } = req.body;
+
+  const event = await Event.findById(eventId);
+  if (!event) {
+    return next(new AppError("Event Does Not Exist", 404));
+  }
+
+  var flag = -1;
+  event.teams.every((team) => {
+    if (team.teamId == teamId && team.college == college) {
+      flag = 0;
+      team.participants.push(participantId);
+      return false;
+    }
+  });
+
+  await event.save();
+
+  if (flag == 0) {
+    res.status(200).json({
+      status: "success",
+      message: "Registration Successful",
+    });
+  } else {
+    res.status(200).json({
+      status: "fail",
+      message: "Registration Failed",
+    });
+  }
 });
 
 exports.createEvent = asyncHandler(async (req, res, next) => {
