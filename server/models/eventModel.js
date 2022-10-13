@@ -51,12 +51,35 @@ const eventSchema = new mongoose.Schema({
       ref: "User",
     },
   ],
+  teams: [
+    {
+      teamId: {
+        type: String,
+        unique: true,
+      },
+      teamName: String,
+      college: String,
+      participants: [
+        {
+          type: mongoose.Schema.ObjectId,
+          ref: "User",
+        },
+      ],
+    },
+  ],
 });
 
 eventSchema.pre(/^find/, function (next) {
   this.populate({
     path: "participants",
-    select: "-__v -events",
+    select:
+      "-__v -events -passwordChangedAt -passwordResetToken -passwordResetExpired",
+  });
+
+  this.populate({
+    path: "teams.participants",
+    select:
+      "-__v -events -passwordChangedAt -passwordResetToken -passwordResetExpired",
   });
 
   next();
