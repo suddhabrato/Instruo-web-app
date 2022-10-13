@@ -2,166 +2,119 @@ import React from "react";
 
 const TeamTable = () => {
   return (
-    <div className="overflow-x-auto w-full">
-      <table className="table w-full">
+    <div className="overflow-x-auto w-full my-16">
+      <h2 className="mt-8 mb-8 text-4xl font-bold md:text-5xl">
+        Team Information
+      </h2>
+      <table className="table table-zebra w-full ">
         <thead>
           <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
-            <th></th>
+            <td>Name</td>
+            <td>Institution</td>
+            <td>Email</td>
+            <td>Status</td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
             <td>
               <div className="flex items-center space-x-3">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
                     <img
-                      src="/tailwind-css-component-profile-2@56w.png"
+                      src="https://i.pravatar.cc/300"
                       alt="Avatar Tailwind CSS Component"
                     />
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">Hart Hagerty</div>
-                  <div className="text-sm opacity-50">United States</div>
+                  <div className="font-bold whitespace-normal">
+                    Lucifer Morningstar
+                  </div>
                 </div>
               </div>
             </td>
-            <td>
-              Zemlak, Daniel and Leannon
-              <br />
-              <span className="badge badge-ghost badge-sm">
-                Desktop Support Technician
-              </span>
+            <td className="whitespace-normal">
+              Indian Institute of Engineering Science and Technology, Shibpur
             </td>
-            <td>Purple</td>
-            <th>
-              <button className="btn btn-ghost btn-xs">details</button>
-            </th>
+            <td className="whitespace-normal">lucimorn@gmail.com</td>
+            <td>
+              <div className="badge badge-info">Registered</div>
+            </td>
           </tr>
           <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
             <td>
               <div className="flex items-center space-x-3">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
                     <img
-                      src="/tailwind-css-component-profile-3@56w.png"
+                      src="https://i.pravatar.cc/300"
                       alt="Avatar Tailwind CSS Component"
                     />
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">Brice Swyre</div>
-                  <div className="text-sm opacity-50">China</div>
+                  <div className="font-bold"> Lucifer Morningstar</div>
                 </div>
               </div>
             </td>
             <td>
-              Carroll Group
-              <br />
-              <span className="badge badge-ghost badge-sm">Tax Accountant</span>
+              Indian Institute of Engineering Science and Technology, Shibpur
             </td>
-            <td>Red</td>
-            <th>
-              <button className="btn btn-ghost btn-xs">details</button>
-            </th>
+            <td>lucimorn@gmail.com</td>
+            <td>
+              <div className="badge badge-info">Registered</div>
+            </td>
           </tr>
           <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
             <td>
               <div className="flex items-center space-x-3">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
                     <img
-                      src="/tailwind-css-component-profile-4@56w.png"
+                      src="https://i.pravatar.cc/300"
                       alt="Avatar Tailwind CSS Component"
                     />
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">Marjy Ferencz</div>
-                  <div className="text-sm opacity-50">Russia</div>
+                  <div className="font-bold"> Lucifer Morningstar</div>
                 </div>
               </div>
             </td>
             <td>
-              Rowe-Schoen
-              <br />
-              <span className="badge badge-ghost badge-sm">
-                Office Assistant I
-              </span>
+              Indian Institute of Engineering Science and Technology, Shibpur
             </td>
-            <td>Crimson</td>
-            <th>
-              <button className="btn btn-ghost btn-xs">details</button>
-            </th>
+            <td>lucimorn@gmail.com</td>
+            <td>
+              <div className="badge badge-info">Registered</div>
+            </td>
           </tr>
           <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
             <td>
               <div className="flex items-center space-x-3">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
                     <img
-                      src="/tailwind-css-component-profile-5@56w.png"
+                      src="https://i.pravatar.cc/300"
                       alt="Avatar Tailwind CSS Component"
                     />
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">Yancy Tear</div>
-                  <div className="text-sm opacity-50">Brazil</div>
+                  <div className="font-bold"> Lucifer Morningstar</div>
                 </div>
               </div>
             </td>
             <td>
-              Wyman-Ledner
-              <br />
-              <span className="badge badge-ghost badge-sm">
-                Community Outreach Specialist
-              </span>
+              Indian Institute of Engineering Science and Technology, Shibpur
             </td>
-            <td>Indigo</td>
-            <th>
-              <button className="btn btn-ghost btn-xs">details</button>
-            </th>
+            <td>lucimorn@gmail.com</td>
+            <td>
+              <div className="badge badge-info">Registered</div>
+            </td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
-            <th></th>
-          </tr>
-        </tfoot>
       </table>
     </div>
   );
