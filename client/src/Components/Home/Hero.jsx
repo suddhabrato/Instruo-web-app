@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { Canvas } from "react-three-fiber"
 
 import logo from "../../assets/logo.svg"
-import HeroAnim from "./HeroAnim"
+import HeroAnim from "../Anims/HeroAnim"
 
 const Hero = () => {
 	return (

@@ -1,13 +1,13 @@
 import React from "react"
 import WindMap from "../Anims/WindMap"
 
-const Events = () => {
+const HeroSection = ({ title, desc, bgImage }) => {
 	return (
 		<div className="h-[33vh] -mt-[5rem] hero bg-black">
 			<WindMap />
 			<div className="text-center mt-auto">
 				<h1 className="mt-auto mb-2 text-5xl font-bold text-white">
-					Events
+					HeroSection
 				</h1>
 				<p className="mb-5 text-secondary-content">
 					Provident cupiditate voluptatem et in. Quaerat fugiat ut
@@ -19,7 +19,7 @@ const Events = () => {
 							<a>Instruo</a>
 						</li>
 						<li>
-							<a>Events</a>
+							<a>HeroSection</a>
 						</li>
 					</ul>
 				</div>
@@ -28,4 +28,4 @@ const Events = () => {
 	)
 }
 
-export default Events
+export default HeroSection
