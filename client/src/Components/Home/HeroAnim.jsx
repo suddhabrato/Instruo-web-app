@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
-import { PerspectiveCamera } from "@react-three/drei"
+import { CameraShake, PerspectiveCamera } from "@react-three/drei"
 import * as THREE from "three"
 
 const parameters = [
@@ -15,6 +15,7 @@ const parameters = [
 	[5.5, 0xffffff, 0.125],
 ]
 const r = 450
+const maxY = 1000
 
 function createGeometry() {
 	const geometry = new THREE.BufferGeometry()
@@ -46,7 +47,16 @@ function createGeometry() {
 
 const HeroAnim = () => {
 	const myMesh = useRef()
-	useFrame(() => {
+
+	useFrame((state) => {
+		state.camera.position.y += state.mouse.y * 15
+		state.camera.position.y = THREE.MathUtils.clamp(
+			state.camera.position.y,
+			-1000,
+			1000
+		)
+
+		state.camera.lookAt(myMesh.current.position)
 		const time = Date.now() * 0.0001
 
 		for (let i = 0; i < myMesh.current.children.length; i++) {
@@ -59,7 +69,7 @@ const HeroAnim = () => {
 					const scale =
 						object.userData.originalScale *
 						(i / 5 + 1) *
-						(1 + 0.45 * Math.sin(7 * time))
+						(1 + 0.4 * Math.sin(5 * time))
 
 					object.scale.x = object.scale.y = object.scale.z = scale
 				}
@@ -75,7 +85,16 @@ const HeroAnim = () => {
 				near={1}
 				far={3000}
 			/>
-			<mesh ref={myMesh}>
+			<mesh
+				ref={myMesh}
+				// onPointerMove={(e) => {
+				// 	const mouseY = e.clientY - window.innerHeight / 2
+				// 	console.log(mouseY)
+				// 	e.camera.position.y +=
+				// 		(-mouseY + 200 - e.camera.position.y) * 0.05
+				// 	e.camera.lookAt(myMesh.current.position)
+				// }}
+			>
 				{parameters.map((p, i) => (
 					<lineSegments
 						key={i}

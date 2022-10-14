@@ -3,6 +3,7 @@
 :root {
 	margin: 0;
 	padding: 0;
+	scroll-behavior: smooth;
 
 	font-family: "Exo 2", sans-serif;
 	/* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */

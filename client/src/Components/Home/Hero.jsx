@@ -1,4 +1,5 @@
-import React from "react"
+import { OrbitControls, Stars } from "@react-three/drei"
+import React, { useRef } from "react"
 import { Link } from "react-router-dom"
 import { Canvas } from "react-three-fiber"
 
@@ -16,10 +17,11 @@ const Hero = () => {
 			<div className="hero-overlay bg-black">
 				<Canvas>
 					<HeroAnim />
+					<OrbitControls enableZoom={false} />
 				</Canvas>
 			</div>
-			<div className="hero-content text-center text-neutral-content">
-				<div className="max-w-md text-white bg-slate-600 backdrop-blur-sm bg-opacity-10 p-5 rounded-lg">
+			<div className="hero-content text-center">
+				<div className="max-w-md text-white bg-slate-50 backdrop-blur-sm bg-opacity-10 p-5 rounded-lg">
 					<img
 						src={logo}
 						className="max-w-sm mx-auto"
