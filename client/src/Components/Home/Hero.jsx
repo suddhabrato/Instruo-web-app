@@ -1,5 +1,5 @@
-import { OrbitControls, Stars } from "@react-three/drei"
-import React, { useRef } from "react"
+import React from "react"
+import { OrbitControls } from "@react-three/drei"
 import { Link } from "react-router-dom"
 import { Canvas } from "react-three-fiber"
 
@@ -14,12 +14,13 @@ const Hero = () => {
 			// 	backgroundImage: `url("https://images.pexels.com/photos/599982/pexels-photo-599982.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1")`,
 			// }}
 		>
-			<div className="hero-overlay bg-black">
+			<div className="hero-overlay">
 				<Canvas>
 					<HeroAnim />
 					<OrbitControls enableZoom={false} />
 				</Canvas>
 			</div>
+
 			<div className="hero-content text-center">
 				<div className="max-w-md text-white bg-slate-50 backdrop-blur-sm bg-opacity-10 p-5 rounded-lg">
 					<img

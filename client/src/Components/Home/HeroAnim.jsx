@@ -69,7 +69,7 @@ const HeroAnim = () => {
 					const scale =
 						object.userData.originalScale *
 						(i / 5 + 1) *
-						(1 + 0.4 * Math.sin(5 * time))
+						(1 + 0.45 * Math.sin(7 * time))
 
 					object.scale.x = object.scale.y = object.scale.z = scale
 				}
