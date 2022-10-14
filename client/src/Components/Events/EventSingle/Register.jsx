@@ -4,8 +4,8 @@ import TeamTable from "./TeamTable";
 const Register = () => {
   return (
     <>
-      <div className="bg-base-100 text-base-content mx-auto min-h-screen max-w-md md:max-w-full">
-        <div className="hero-content px-4 md:px-2 mx-auto flex flex-col">
+      <div className="bg-base-100 text-base-content mx-auto  max-w-md md:max-w-full">
+        <div className="hero-content px-8 md:px-4 mx-auto flex flex-col">
           <div className="alert shadow-lg">
             <div>
               <svg
@@ -22,7 +22,8 @@ const Register = () => {
                 ></path>
               </svg>
               <span>
-                You are not registered for this event. Click below to register.
+                You are not registered for this event. Click{" "}
+                <a href="#reg">here</a> to register.
               </span>
             </div>
           </div>
@@ -67,6 +68,7 @@ const Register = () => {
 
           <div className="flex flex-col lg:flex-row">
             <label
+              id="reg"
               htmlFor="my-modal-6"
               className="btn btn-primary btn-wide lg:mx-4 my-2 lg:btn-lg"
             >
@@ -95,41 +97,10 @@ const Register = () => {
                 </div>
               </div>
             </div>
-
-            <label
-              htmlFor="my-modal-1"
-              className="btn btn-error btn-wide lg:mx-4 my-2 lg:btn-lg"
-            >
-              Unregister
-            </label>
-
-            <input type="checkbox" id="my-modal-1" className="modal-toggle" />
-            <div className="modal sm:modal-middle">
-              <div className="modal-box">
-                <h3 className="font-bold text-lg">Confirm Unregistration</h3>
-                <p className="py-4">
-                  Are you sure you want to unregister from this event?
-                  <br /> Click Yes to proceed and NO to cancel.
-                </p>
-                <div className="modal-action">
-                  <label htmlFor="my-modal-1" className="btn">
-                    No
-                  </label>
-                  <a
-                    href="/events"
-                    htmlFor="my-modal-1"
-                    className="btn btn-primary"
-                  >
-                    Yes
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
           <TeamTable />
         </div>
       </div>
-      <div className="divider"></div>
     </>
   );
 };
