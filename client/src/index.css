@@ -1,13 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
 	margin: 0;
 	padding: 0;
 
-	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+	font-family: "Exo 2", sans-serif;
+	/* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+	color: black;
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	color: white;
+	border-radius: 15px;
 }
 
 @tailwind base;
