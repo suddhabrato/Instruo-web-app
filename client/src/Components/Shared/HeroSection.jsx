@@ -7,12 +7,9 @@ const HeroSection = ({ title, desc, bgImage }) => {
 			<WindMap />
 			<div className="text-center mt-auto">
 				<h1 className="mt-auto mb-2 text-5xl font-bold text-white">
-					HeroSection
+					{title}
 				</h1>
-				<p className="mb-5 text-secondary-content">
-					Provident cupiditate voluptatem et in. Quaerat fugiat ut
-					assumenda excepturi exercitationem quasi.
-				</p>
+				<p className="mb-5 text-secondary-content max-w-xl">{desc}</p>
 				<div className="text-sm text-neutral-content breadcrumbs flex justify-center mb-5">
 					<ul>
 						<li>

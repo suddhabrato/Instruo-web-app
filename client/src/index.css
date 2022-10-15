@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
+	scroll-padding: 10vh;
 
 	font-family: "Exo 2", sans-serif;
 	/* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
