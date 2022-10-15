@@ -11,6 +11,7 @@ import Home from "./Components/Home";
 import Events from "./Components/Events";
 import SignUp from "./Components/AuthPage/SignUp";
 import LogIn from "./Components/AuthPage/LogIn";
+import EventSingle from "./Components/Events/EventSingle/EventSingle";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/events/:eventId" element={<EventSingle />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
         </Routes>
