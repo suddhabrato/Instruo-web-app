@@ -1,9 +1,14 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 
 const eventSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
+  },
+  eventId: {
+    type: String,
+    unique: true,
   },
   subtitle: String,
   category: {
@@ -75,6 +80,11 @@ const eventSchema = new mongoose.Schema({
       ],
     },
   ],
+});
+
+eventSchema.pre("save", function (next) {
+  this.eventId = slugify(this.title, { lower: true });
+  next();
 });
 
 eventSchema.pre(/^find/, function (next) {

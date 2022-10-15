@@ -46,7 +46,7 @@ exports.getAllEvents = asyncHandler(async (req, res, next) => {
 });
 
 exports.getEventById = asyncHandler(async (req, res, next) => {
-  const event = await Event.findById(req.params.id);
+  const event = await Event.find({ eventId: req.params.id });
 
   if (!event) {
     return next(new AppError("Event Does Not Exist", 404));
@@ -61,10 +61,14 @@ exports.getEventById = asyncHandler(async (req, res, next) => {
 });
 
 exports.updateEvent = asyncHandler(async (req, res, next) => {
-  const event = await Event.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true,
-  });
+  const event = await Event.findOneAndUpdate(
+    { eventId: req.params.id },
+    req.body,
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
 
   if (!event) {
     return next(new AppError("Event Does Not Exist", 404));
@@ -77,7 +81,7 @@ exports.updateEvent = asyncHandler(async (req, res, next) => {
 });
 
 exports.deleteEvent = asyncHandler(async (req, res, next) => {
-  const event = await Event.findByIdAndDelete(req.params.id);
+  const event = await Event.findOneAndDelete({ eventId: req.params.id });
 
   if (!event) {
     return next(new AppError("Event Does Not Exist", 404));
@@ -87,7 +91,7 @@ exports.deleteEvent = asyncHandler(async (req, res, next) => {
 });
 
 exports.getEventParticipants = asyncHandler(async (req, res, next) => {
-  const event = await Event.findById(req.params.id);
+  const event = await Event.find({ eventId: req.params.id });
 
   if (!event) {
     return next(new AppError("Event Does Not Exist", 404));
