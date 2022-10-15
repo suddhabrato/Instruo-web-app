@@ -21,7 +21,7 @@ const Hero = () => {
 				</Canvas>
 			</div>
 
-			<div className="hero-content text-center">
+			<div className="hero-content text-center pointer-events-none">
 				<div className="max-w-md text-white bg-slate-50 backdrop-blur-sm bg-opacity-10 p-5 rounded-lg">
 					<img
 						src={logo}
@@ -62,7 +62,9 @@ const Hero = () => {
 						</div>
 					</div>
 					<Link to="/events">
-						<button className="btn btn-primary">View Events</button>
+						<button className="btn btn-primary pointer-events-auto">
+							View Events
+						</button>
 					</Link>
 				</div>
 			</div>
