@@ -1,10 +1,16 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 
 const eventSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
   },
+  eventId: {
+    type: String,
+    unique: true,
+  },
+  subtitle: String,
   category: {
     type: String,
     required: true,
@@ -13,7 +19,7 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  photo: String,
+  image: String,
   startDate: {
     type: Date,
     required: true,
@@ -22,22 +28,29 @@ const eventSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  prize: {
-    type: String,
-  },
-  timeline: [
+  prizes: [
     {
-      round_number: Number,
-      desc: String,
-      start: Date,
-      end: Date,
+      standing: String,
+      reward: String,
+      color: String,
     },
   ],
-  contact: {
-    name: String,
-    phone: String,
-    email: String,
-  },
+  schedule: [
+    {
+      title: String,
+      date: Date,
+      time: String,
+      duration: String,
+      venue: String,
+    },
+  ],
+  contacts: [
+    {
+      name: String,
+      phone: String,
+      email: String,
+    },
+  ],
   rules: [String],
   faq: [
     {
@@ -67,6 +80,11 @@ const eventSchema = new mongoose.Schema({
       ],
     },
   ],
+});
+
+eventSchema.pre("save", function (next) {
+  this.eventId = slugify(this.title, { lower: true });
+  next();
 });
 
 eventSchema.pre(/^find/, function (next) {
