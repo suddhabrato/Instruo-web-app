@@ -1,10 +1,10 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
-import logo from "../assets/logo.svg"
+import logo from "../../assets/logo.svg"
 
 const NavBar = () => {
 	return (
-		<nav className="sticky top-[1rem] z-30 navbar bg-base-300 rounded-box bg-opacity-60 mt-[1rem] backdrop-blur transition-all duration-100 text-base-content shadow-sm w-11/12 mx-auto">
+		<nav className="sticky top-[1rem] z-50 navbar bg-base-300 rounded-box bg-opacity-60 mt-[1rem] backdrop-blur transition-all duration-100 text-base-content shadow-sm w-11/12 mx-auto">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,18 +24,21 @@ const NavBar = () => {
 					</label>
 					<ul
 						tabIndex={0}
-						className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+						className="menu menu-compact dropdown-content mt-3 p-2 shadow-sm bg-base-300 rounded-box w-52 bg-opacity-60">
 						<li>
-							<a>Item 1</a>
+							<NavLink to="/sponsors">Sponsors</NavLink>
 						</li>
 						<li>
-							<a>Item 3</a>
+							<NavLink to="/events">Events</NavLink>
 						</li>
 						<li>
-							<a>Sign In</a>
+							<a>Contact Us</a>
 						</li>
 						<li>
-							<a>Register</a>
+							<NavLink to="/login">Log In</NavLink>
+						</li>
+						<li>
+							<NavLink to="/signup">Register</NavLink>
 						</li>
 					</ul>
 				</div>
@@ -59,32 +62,14 @@ const NavBar = () => {
 						<NavLink to="/sponsors">Sponsors</NavLink>
 					</li>
 					<li tabIndex={0}>
-						<NavLink to="/events">
-							Events
-							{/* <svg
-									className="fill-current"
-									xmlns="http://www.w3.org/2000/svg"
-									width="20"
-									height="20"
-									viewBox="0 0 24 24">
-									<path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-								</svg> */}
-						</NavLink>
-						{/* <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-							<li>
-								<a>Submenu 1</a>
-							</li>
-							<li>
-								<a>Submenu 2</a>
-							</li>
-						</ul> */}
+						<NavLink to="/events">Events</NavLink>
 					</li>
 					<li>
 						<a>Contact Us</a>
 					</li>
 				</ul>
 			</div>
-			<div className="navbar-end">
+			<div className="navbar-end hidden lg:flex">
 				<NavLink
 					to="/login"
 					className="btn btn-outline btn-primary mx-2">
