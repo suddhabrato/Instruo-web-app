@@ -12,6 +12,9 @@ const EventCard = ({ eventId }) => {
 			</figure>
 			<div className="card-body overflow-y-auto">
 				<h2 className="card-title text-2xl">Event Title</h2>
+				<div className="badge badge-outline badge-md">
+					Event Date & Event time
+				</div>
 				<p>
 					Short Description Event: Lorem ipsum dolor sit amet
 					consectetur adipisicing elit. Omnis, et. Lorem ipsum dolor
