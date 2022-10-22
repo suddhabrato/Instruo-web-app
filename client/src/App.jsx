@@ -1,17 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Register from "../Register";
 import Navbar from "./Components/Shared/Navbar";
-import About from "./Components/Home/About";
-import Hero from "./Components/Home/Hero";
-import Footer from "./Components/Footer";
+import Footer from "./Components/Shared/Footer";
 import Sponsors from "./Components/Sponsors/Sponsors";
-import EventCards from "./Components/EventCards";
 import Home from "./Components/Home";
 import Events from "./Components/Events";
 import SignUp from "./Components/AuthPage/SignUp";
 import LogIn from "./Components/AuthPage/LogIn";
-import EventSingle from "./Components/Events/EventSingle/EventSingle";
+import EventSingle from "./Components/Events/EventSingle";
+import Workshops from "./Components/Workshops";
+import WorkshopSingle from "./Components/Workshops/WorkshopSingle";
 
 const App = () => {
   return (
@@ -23,6 +21,8 @@ const App = () => {
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/events" element={<Events />} />
           <Route path="/events/:eventId" element={<EventSingle />} />
+          <Route path="/workshops" element={<Workshops />} />
+          <Route path="/workshops/:workshopId" element={<WorkshopSingle />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
         </Routes>

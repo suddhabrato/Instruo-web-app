@@ -1,8 +1,8 @@
 import React from "react";
+import WorkshopCard from "./WorkshopCard";
 import HeroSection from "../Shared/HeroSection";
-import EventCard from "./EventCard";
 
-const events = [
+const workshops = [
   {
     id: 1,
   },
@@ -15,12 +15,19 @@ const events = [
   {
     id: 4,
   },
+  {
+    id: 5,
+  },
+  {
+    id: 6,
+  },
 ];
-const Events = () => {
+
+const Workshops = () => {
   return (
     <div>
       <HeroSection
-        title={"Events"}
+        title={"Workshops"}
         desc={
           "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ullam?"
         }
@@ -30,18 +37,18 @@ const Events = () => {
             url: "/",
           },
           {
-            title: "Events",
+            title: "Workshops",
             url: "",
           },
         ]}
       />
-      <div className="p-10 py-32 flex flex-wrap gap-10 justify-center">
-        {events.map((event, i) => (
-          <EventCard key={i} eventId={event.id} />
+      <div className="p-10 mt-32 mb-32 flex flex-wrap gap-10 justify-center">
+        {workshops.map((workshop, i) => (
+          <WorkshopCard key={i} workshopId={workshop.id} />
         ))}
       </div>
     </div>
   );
 };
 
-export default Events;
+export default Workshops;
