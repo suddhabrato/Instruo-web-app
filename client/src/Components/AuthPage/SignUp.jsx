@@ -28,6 +28,35 @@ const SignUp = () => {
 					<div className="card-body">
 						<div className="form-control">
 							<label className="label">
+								<span className="label-text">Name</span>
+							</label>
+							<input
+								type="text"
+								className="input input-bordered"
+							/>
+						</div>
+						<div className="form-control">
+							<label className="label">
+								<span className="label-text">
+									Institute Name
+								</span>
+							</label>
+							<input
+								type="text"
+								className="input input-bordered"
+							/>
+						</div>
+						<div className="form-control">
+							<label className="label">
+								<span className="label-text">Email</span>
+							</label>
+							<input
+								type="text"
+								className="input input-bordered"
+							/>
+						</div>
+						<div className="form-control">
+							<label className="label">
 								<span className="label-text">Email</span>
 							</label>
 							<input
