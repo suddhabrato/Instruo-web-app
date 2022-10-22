@@ -1,24 +1,14 @@
 import React from "react";
+import HostsCard from "./HostsCard";
 
-const Hosts = () => {
+const Hosts = ({ hosts }) => {
   return (
-    <div className="card w-96 h-96 bg-base-100 shadow-xl image-full">
-      <div className="card-body">
-        <div className="avatar">
-          <div className="w-32 rounded-full">
-            <img src="https://placeimg.com/192/192/people" />
-          </div>
-        </div>
-        <h2 className="card-title text-2xl">Event Title</h2>
-        <div className="badge badge-outline badge-md">
-          Event Date & Event time
-        </div>
-        <p>
-          Short Description Event: Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Omnis, et. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Eius eos ex illo
-        </p>
-        <div className="card-actions justify-end"></div>
+    <div className="my-16">
+      <h2 className="mb-8 text-5xl font-bold">Speakers</h2>
+      <div className="pt-10 flex flex-wrap gap-10 justify-center">
+        {hosts.map((host, idx) => (
+          <HostsCard key={idx} {...host} />
+        ))}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import Faq from "./Faq";
 import Register from "./Register";
-import EventDetails from "./EventDetails";
+import WorkshopDetails from "./WorkshopDetails";
 import HeroSection from "../../Shared/HeroSection";
 
 const WorkshopSingle = () => {
@@ -78,10 +78,25 @@ const WorkshopSingle = () => {
         venue: "Amenities Center",
       },
     ],
-    prizes: [
-      { standing: "Winner", reward: "INR 3500", color: "primary" },
-      { standing: "Runner Up", reward: "INR 1500", color: "secondary" },
-      { standing: "Top 5", reward: "GFG Coupons", color: "neutral" },
+    hosts: [
+      {
+        hostName: "Jeffrey Dahmer",
+        hostDesc:
+          "Short Description Profile: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eos ex illo",
+        hostImg: "https://placeimg.com/300/300/people",
+      },
+      {
+        hostName: "Charles Manson",
+        hostDesc:
+          "Short Description Profile: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eos ex illo",
+        hostImg: "https://placeimg.com/300/300/people",
+      },
+      {
+        hostName: "Ed Kemper",
+        hostDesc:
+          "Short Description Profile: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eos ex illo",
+        hostImg: "https://placeimg.com/300/300/people",
+      },
     ],
   };
   return (
@@ -104,7 +119,7 @@ const WorkshopSingle = () => {
           },
         ]}
       />
-      <EventDetails {...workshop} />
+      <WorkshopDetails {...workshop} />
       <Register />
     </>
   );
