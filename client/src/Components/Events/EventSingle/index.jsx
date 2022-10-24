@@ -6,21 +6,18 @@ import HeroSection from "../../Shared/HeroSection";
 import axios from "axios";
 import { Sugar } from "react-preloaders";
 
-const EventSingle = () => {
-  const [events, getEvents] = useState();
+const EventSingle = ({ eventId }) => {
+  const [event, getEvent] = useState();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
-      .get(
-        "https://cors-anywhere.herokuapp.com/https://evening-brushlands-79138.herokuapp.com/api/v1/events ",
-        {
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      )
+      .get(`http://localhost:3000/api/v1/events/${eventId}`, {
+        headers: {
+          Accept: "application/json",
+        },
+      })
       .then((res) => {
-        getEvents(res.data.events[0]);
+        getEvent(res.data.data.event[0]);
         setLoading(false);
       });
   }, []);
@@ -30,8 +27,8 @@ const EventSingle = () => {
       {!loading && (
         <div>
           <HeroSection
-            title={events.title}
-            desc={events.subtitle}
+            title={event.title}
+            desc={event.subtitle}
             breadParams={[
               {
                 title: "Instruo",
@@ -42,12 +39,12 @@ const EventSingle = () => {
                 url: "/events",
               },
               {
-                title: events.title,
+                title: event.title,
                 url: "",
               },
             ]}
           />
-          <EventDetails {...events} />
+          <EventDetails {...event} />
           <Register />
         </div>
       )}

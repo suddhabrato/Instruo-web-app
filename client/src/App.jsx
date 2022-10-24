@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
+
 import Navbar from "./Components/Shared/Navbar";
 import Footer from "./Components/Shared/Footer";
 import Sponsors from "./Components/Sponsors/Sponsors";
@@ -14,6 +15,10 @@ import WorkshopSingle from "./Components/Workshops/WorkshopSingle";
 import Profile from "./Components/Profile";
 
 const App = () => {
+  const GetEventById = () => {
+    const { eventId } = useParams();
+    return <EventSingle eventId={eventId} />;
+  };
   return (
     <div>
       <BrowserRouter>
@@ -22,7 +27,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/events/:eventId" element={<EventSingle />} />
+          <Route path="/events/:eventId" element={<GetEventById />} />
           <Route path="/workshops" element={<Workshops />} />
           <Route path="/workshops/:workshopId" element={<WorkshopSingle />} />
           <Route path="/contactus" element={<ContactUs />} />

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 
 const NavBar = () => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(true);
   return (
     <nav className="sticky top-[1rem] z-50 navbar bg-base-300 rounded-box bg-opacity-60 mt-[1rem] backdrop-blur transition-all duration-100 text-base-content shadow-sm w-11/12 mx-auto">
       <div className="navbar-start">
@@ -86,7 +86,7 @@ const NavBar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-300 bg-opacity-80 backdrop-blur rounded-box w-52"
             >
               <li>
-                <a>Profile</a>
+                <NavLink to="/profile">Profile</NavLink>
               </li>
               <li>
                 <a>Logout</a>
