@@ -19,6 +19,10 @@ const App = () => {
     const { eventId } = useParams();
     return <EventSingle eventId={eventId} />;
   };
+  const GetWorkshopById = () => {
+    const { workshopId } = useParams();
+    return <WorkshopSingle workshopId={workshopId} />;
+  };
   return (
     <div>
       <BrowserRouter>
@@ -29,7 +33,7 @@ const App = () => {
           <Route path="/events" element={<Events />} />
           <Route path="/events/:eventId" element={<GetEventById />} />
           <Route path="/workshops" element={<Workshops />} />
-          <Route path="/workshops/:workshopId" element={<WorkshopSingle />} />
+          <Route path="/workshops/:workshopId" element={<GetWorkshopById />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />

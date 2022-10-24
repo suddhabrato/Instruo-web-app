@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react";
-import Faq from "./Faq";
 import Register from "./Register";
 import EventDetails from "./EventDetails";
 import HeroSection from "../../Shared/HeroSection";
@@ -17,7 +16,7 @@ const EventSingle = ({ eventId }) => {
         },
       })
       .then((res) => {
-        getEvent(res.data.data.event[0]);
+        getEvent(res.data.data.event);
         setLoading(false);
       });
   }, []);
@@ -50,7 +49,7 @@ const EventSingle = ({ eventId }) => {
       )}
       <Sugar
         customLoading={loading}
-        time={3000}
+        time={1800}
         animation="slide-down"
         background="#2A303C"
         color="#6419E6"

@@ -41,14 +41,14 @@ const Events = () => {
           />
           <div className="p-10 py-32 flex flex-wrap gap-10 justify-center">
             {events.map((event, i) => (
-              <EventCard key={i} eventId={event.eventId} />
+              <EventCard key={i} {...event} />
             ))}
           </div>
         </div>
       )}
       <Sugar
         customLoading={loading}
-        time={3000}
+        time={1800}
         animation="slide-down"
         background="#2A303C"
         color="#6419E6"

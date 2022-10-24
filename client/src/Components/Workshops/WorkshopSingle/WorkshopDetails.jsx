@@ -6,7 +6,14 @@ import Schedule from "./Schedule";
 import Contacts from "./Contacts";
 import Hosts from "./Hosts";
 
-const WorkshopDetails = ({ desc, rules, schedule, contacts, faq, hosts }) => {
+const WorkshopDetails = ({
+  desc,
+  rules,
+  schedule,
+  contacts,
+  faq,
+  speakers,
+}) => {
   return (
     <div>
       <div className="bg-base-100 text-base-content mx-auto max-w-md md:max-w-full">
@@ -17,7 +24,7 @@ const WorkshopDetails = ({ desc, rules, schedule, contacts, faq, hosts }) => {
             <Schedule schedule={schedule} />
             <Faq faq={faq} />
             <Contacts contacts={contacts} />
-            <Hosts hosts={hosts} />
+            <Hosts speakers={speakers} />
           </div>
         </div>
       </div>
