@@ -17,7 +17,7 @@ const Hero = () => {
 			<div className="hero-overlay">
 				<Canvas>
 					<HeroAnim />
-					<OrbitControls enableZoom={false} />
+					<OrbitControls enableZoom={false} enabled={false} />
 				</Canvas>
 			</div>
 
