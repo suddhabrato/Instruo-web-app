@@ -3,9 +3,6 @@ import React, { useState } from "react";
 import HeroSection from "../Shared/HeroSection";
 import ContactCard from "./ContactCard";
 
-import HeroSection from "../Shared/HeroSection";
-import ContactCard from "./ContactCard";
-
 const ContactUs = () => {
   const [tabActive, setTabActive] = useState(2);
   return (
