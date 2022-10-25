@@ -1,126 +1,58 @@
-import React from "react";
-import Faq from "./Faq";
+import { React, useState, useEffect } from "react";
 import Register from "./Register";
 import WorkshopDetails from "./WorkshopDetails";
 import HeroSection from "../../Shared/HeroSection";
+import axios from "axios";
+import { Sugar } from "react-preloaders";
 
-const WorkshopSingle = () => {
-  let workshop = {
-    title: "Machine Learning",
-    subtitle:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eteius ipsam minima, inventore officias tempora maiores",
-    category: "online",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eteius ipsam minima, inventore officia tempora maiores id eum aperiam quiratione praesentium temporibus delectus! Corporis reprehenderit ullam addolorum!",
-    image: "https://placeimg.com/1920/1280/arch",
-    rules: [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eteius ipsam minima, inventore officia tempora maiores id eum aperiam quiratione praesentium temporibus delectus! Corporis reprehenderit ullam addolorum!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eteius ipsam minima, inventore officia tempora maiores id eum aperiam quiratione praesentium temporibus delectus! Corporis reprehenderit ullam addolorum!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eteius ipsam minima, inventore officia tempora maiores id eum aperiam quiratione praesentium temporibus delectus! Corporis reprehenderit ullam addolorum!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eteius ipsam minima, inventore officia tempora maiores id eum aperiam quiratione praesentium temporibus delectus! Corporis reprehenderit ullam addolorum!",
-    ],
-    faq: [
-      {
-        question: "Do you know what this is about?",
-        answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      },
-      {
-        question: "Do you know what this is about?",
-        answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      },
-      {
-        question: "Do you know what this is about?",
-        answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      },
-      {
-        question: "Do you know what this is about?",
-        answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      },
-    ],
-    contacts: [
-      {
-        name: "Abhishek Gupta",
-        email: "abhigupta@gmail.com",
-        phone: "917883299922",
-      },
-      {
-        name: "Abhishek Gupta",
-        email: "abhigupta@gmail.com",
-        phone: "917423299922",
-      },
-    ],
-    schedule: [
-      {
-        title: "Round 1",
-        date: "3 November, 2022",
-        time: "8:30 PM",
-        duration: "3 hours",
-        venue: "Amenities Center",
-      },
-      {
-        title: "Round 2",
-        date: "3 November, 2022",
-        time: "8:30 PM",
-        duration: "3 hours",
-        venue: "Amenities Center",
-      },
-      {
-        title: "Round 3",
-        date: "3 November, 2022",
-        time: "8:30 PM",
-        duration: "3 hours",
-        venue: "Amenities Center",
-      },
-      {
-        title: "Round 4",
-        date: "3 November, 2022",
-        time: "8:30 PM",
-        duration: "3 hours",
-        venue: "Amenities Center",
-      },
-    ],
-    hosts: [
-      {
-        hostName: "Jeffrey Dahmer",
-        hostDesc:
-          "Short Description Profile: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eos ex illo",
-        hostImg: "https://placeimg.com/300/300/people",
-      },
-      {
-        hostName: "Charles Manson",
-        hostDesc:
-          "Short Description Profile: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eos ex illo",
-        hostImg: "https://placeimg.com/300/300/people",
-      },
-      {
-        hostName: "Ed Kemper",
-        hostDesc:
-          "Short Description Profile: Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eos ex illo",
-        hostImg: "https://placeimg.com/300/300/people",
-      },
-    ],
-  };
+const WorkshopSingle = ({ workshopId }) => {
+  const [workshop, getWorkshop] = useState();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/api/v1/workshops/${workshopId}`, {
+        headers: {
+          Accept: "application/json",
+        },
+      })
+      .then((res) => {
+        getWorkshop(res.data.data.workshop);
+        setLoading(false);
+      });
+  }, []);
   return (
     <>
-      <HeroSection
-        title={workshop.title}
-        desc={workshop.subtitle}
-        breadParams={[
-          {
-            title: "Instruo",
-            url: "/",
-          },
-          {
-            title: "Workshop",
-            url: "/workshops",
-          },
-          {
-            title: workshop.title,
-            url: "",
-          },
-        ]}
+      {!loading && (
+        <div>
+          <HeroSection
+            title={workshop.title}
+            desc={workshop.subtitle}
+            breadParams={[
+              {
+                title: "Instruo",
+                url: "/",
+              },
+              {
+                title: "Workshop",
+                url: "/workshops",
+              },
+              {
+                title: workshop.title,
+                url: "",
+              },
+            ]}
+          />
+          <WorkshopDetails {...workshop} />
+          <Register />
+        </div>
+      )}
+      <Sugar
+        customLoading={loading}
+        time={1800}
+        animation="slide-down"
+        background="#2A303C"
+        color="#6419E6"
       />
-      <WorkshopDetails {...workshop} />
-      <Register />
     </>
   );
 };
