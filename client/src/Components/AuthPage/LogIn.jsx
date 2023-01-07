@@ -22,9 +22,9 @@ const LogIn = () => {
 				]}
 			/>
 
-			<div className="flex justify-around items-center p-5">
-				<img src={logo} width="140px" height="140px" />
-				<div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
+			<div className="flex flex-col items-center p-5">
+				<div className="text-9xl font-bold my-8">Instruo 2k23</div>
+				<div className="w-2/3 shadow-2xl bg-base-100">
 					<div className="card-body">
 						<div className="form-control">
 							<label className="label">
@@ -32,7 +32,6 @@ const LogIn = () => {
 							</label>
 							<input
 								type="text"
-								placeholder="email"
 								className="input input-bordered"
 							/>
 						</div>
@@ -42,18 +41,10 @@ const LogIn = () => {
 							</label>
 							<input
 								type="text"
-								placeholder="password"
 								className="input input-bordered"
 							/>
-							<label className="label">
-								<a
-									href="#"
-									className="label-text-alt link link-hover">
-									Forgot password?
-								</a>
-							</label>
 						</div>
-						<div className="form-control mt-6">
+						<div className="form-control mt-6 w-40 mx-auto">
 							<button className="btn btn-primary">Login</button>
 						</div>
 					</div>
