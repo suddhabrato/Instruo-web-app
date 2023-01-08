@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react"
 import HeroSection from "../Shared/HeroSection"
 import EventCard from "./EventCard"
 import axios from "axios"
+import Loader from "../Shared/Loader"
 
 const Events = () => {
 	const [events, getEvents] = useState()
@@ -20,7 +21,11 @@ const Events = () => {
 	}, [])
 	return (
 		<>
-			{!loading && (
+			{loading ? (
+				<div className="text-center p-10">
+					<Loader />
+				</div>
+			) : (
 				<div>
 					<HeroSection
 						title={"Events"}

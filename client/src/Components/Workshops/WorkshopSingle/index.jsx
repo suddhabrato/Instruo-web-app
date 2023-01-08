@@ -3,6 +3,7 @@ import Register from "./Register"
 import WorkshopDetails from "./WorkshopDetails"
 import HeroSection from "../../Shared/HeroSection"
 import axios from "axios"
+import Loader from "../../Shared/Loader"
 
 const WorkshopSingle = ({ workshopId }) => {
 	const [workshop, getWorkshop] = useState()
@@ -21,7 +22,11 @@ const WorkshopSingle = ({ workshopId }) => {
 	}, [])
 	return (
 		<>
-			{!loading && (
+			{loading ? (
+				<div className="text-center p-10">
+					<Loader />
+				</div>
+			) : (
 				<div>
 					<HeroSection
 						title={workshop.title}

@@ -3,6 +3,7 @@ import Register from "./Register"
 import EventDetails from "./EventDetails"
 import HeroSection from "../../Shared/HeroSection"
 import axios from "axios"
+import Loader from "../../Shared/Loader"
 
 const EventSingle = ({ eventId }) => {
 	const [event, getEvent] = useState()
@@ -22,7 +23,11 @@ const EventSingle = ({ eventId }) => {
 
 	return (
 		<>
-			{!loading && (
+			{loading ? (
+				<div className="text-center p-10">
+					<Loader />
+				</div>
+			) : (
 				<div>
 					<HeroSection
 						title={event.title}

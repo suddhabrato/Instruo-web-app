@@ -49,14 +49,20 @@ const HeroAnim = () => {
 	const myMesh = useRef()
 
 	useFrame((state) => {
-		state.camera.position.y += state.mouse.y * 15
+		state.camera.position.y -= state.mouse.y * 15
 		state.camera.position.y = THREE.MathUtils.clamp(
 			state.camera.position.y,
-			-1000,
-			1000
+			-400,
+			400
+		)
+		state.camera.position.x -= state.mouse.x * 15
+		state.camera.position.x = THREE.MathUtils.clamp(
+			state.camera.position.x,
+			-400,
+			400
 		)
 
-		state.camera.lookAt(myMesh.current.position)
+		// state.camera.lookAt(myMesh.current.position)
 		const time = Date.now() * 0.0001
 
 		for (let i = 0; i < myMesh.current.children.length; i++) {
