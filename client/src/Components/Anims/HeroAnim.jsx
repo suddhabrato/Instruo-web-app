@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
-import { CameraShake, PerspectiveCamera } from "@react-three/drei"
+import { PerspectiveCamera } from "@react-three/drei"
 import * as THREE from "three"
 
 const parameters = [
@@ -15,7 +15,6 @@ const parameters = [
 	[5.5, 0xffffff, 0.125],
 ]
 const r = 450
-const maxY = 1000
 
 function createGeometry() {
 	const geometry = new THREE.BufferGeometry()
@@ -62,14 +61,13 @@ const HeroAnim = () => {
 			400
 		)
 
-		// state.camera.lookAt(myMesh.current.position)
 		const time = Date.now() * 0.0001
 
 		for (let i = 0; i < myMesh.current.children.length; i++) {
 			const object = myMesh.current.children[i]
 
 			if (object.isLine) {
-				object.rotation.y = time * (i < 4 ? i + 1 : -(i + 1))
+				object.rotation.y = time * (i < 4 ? i + 1 : -(i + 1)) * 0.5
 
 				if (i < 5) {
 					const scale =
@@ -91,16 +89,7 @@ const HeroAnim = () => {
 				near={1}
 				far={3000}
 			/>
-			<mesh
-				ref={myMesh}
-				// onPointerMove={(e) => {
-				// 	const mouseY = e.clientY - window.innerHeight / 2
-				// 	console.log(mouseY)
-				// 	e.camera.position.y +=
-				// 		(-mouseY + 200 - e.camera.position.y) * 0.05
-				// 	e.camera.lookAt(myMesh.current.position)
-				// }}
-			>
+			<mesh ref={myMesh}>
 				{parameters.map((p, i) => (
 					<lineSegments
 						key={i}
