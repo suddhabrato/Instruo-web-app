@@ -7,7 +7,7 @@ import axios from "axios"
 import App from "./App"
 import "./index.css"
 
-// axios.defaults.baseURL = ""
+axios.defaults.baseURL = "https://instruo-webapp-server.onrender.com"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<ContextProvider>

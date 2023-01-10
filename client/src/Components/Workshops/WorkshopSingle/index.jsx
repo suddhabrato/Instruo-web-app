@@ -10,7 +10,7 @@ const WorkshopSingle = ({ workshopId }) => {
 	const [loading, setLoading] = useState(true)
 	useEffect(() => {
 		axios
-			.get(`http://localhost:3000/api/v1/workshops/${workshopId}`, {
+			.get(`/api/v1/workshops/${workshopId}`, {
 				headers: {
 					Accept: "application/json",
 				},
@@ -21,7 +21,7 @@ const WorkshopSingle = ({ workshopId }) => {
 			})
 	}, [])
 	return (
-		<>
+		<div>
 			{loading ? (
 				<div className="text-center p-10">
 					<Loader />
@@ -50,7 +50,7 @@ const WorkshopSingle = ({ workshopId }) => {
 					<Register />
 				</div>
 			)}
-		</>
+		</div>
 	)
 }
 

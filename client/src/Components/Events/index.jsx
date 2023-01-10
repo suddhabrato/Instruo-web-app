@@ -9,7 +9,7 @@ const Events = () => {
 	const [loading, setLoading] = useState(true)
 	useEffect(() => {
 		axios
-			.get("http://localhost:3000/api/v1/events ", {
+			.get("/api/v1/events", {
 				headers: {
 					Accept: "application/json",
 				},
@@ -20,37 +20,35 @@ const Events = () => {
 			})
 	}, [])
 	return (
-		<>
+		<div>
+			<HeroSection
+				title={"Events"}
+				desc={
+					"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ullam?"
+				}
+				breadParams={[
+					{
+						title: "Instruo",
+						url: "/",
+					},
+					{
+						title: "Events",
+						url: "",
+					},
+				]}
+			/>
 			{loading ? (
 				<div className="text-center p-10">
 					<Loader />
 				</div>
 			) : (
-				<div>
-					<HeroSection
-						title={"Events"}
-						desc={
-							"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ullam?"
-						}
-						breadParams={[
-							{
-								title: "Instruo",
-								url: "/",
-							},
-							{
-								title: "Events",
-								url: "",
-							},
-						]}
-					/>
-					<div className="p-10 py-32 flex flex-wrap gap-10 justify-center">
-						{events.map((event, i) => (
-							<EventCard key={i} {...event} />
-						))}
-					</div>
+				<div className="p-10 py-32 flex flex-wrap gap-10 justify-center">
+					{events.map((event, i) => (
+						<EventCard key={i} {...event} />
+					))}
 				</div>
 			)}
-		</>
+		</div>
 	)
 }
 
