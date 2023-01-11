@@ -9,6 +9,9 @@ import logo from "../../assets/logo-static.svg"
 import Loader from "../Shared/Loader"
 
 const LogIn = () => {
+	const { setLoginUser, showToastHandler } = useStateContext()
+	const navigate = useNavigate()
+
 	return (
 		<div>
 			<HeroSection
@@ -57,37 +60,23 @@ const LogIn = () => {
 										"/api/v1/users/login",
 										values
 									)
-									const { data: setting } = await axios.post(
-										"/api/v1/settings/get-setting",
-										{ userid: values.email }
-									)
+
 									localStorage.setItem(
 										"user",
 										JSON.stringify({
 											...data.user,
-											password: "",
 										})
 									)
-									localStorage.setItem(
-										"setting",
-										JSON.stringify(setting)
-									)
-									setLoginUser({ ...data.user, password: "" })
-									setUserSetting(setting)
+
+									setLoginUser({ ...data.user })
+
 									setSubmitting(false)
-									if (setting.budget === 0) {
-										showToastHandler(
-											"Please set budget & categories",
-											"warning"
-										)
-										navigate("/settings")
-									} else {
-										showToastHandler(
-											"Login successful",
-											"success"
-										)
-										navigate("/")
-									}
+
+									showToastHandler(
+										"Login successful",
+										"success"
+									)
+									navigate("/")
 								} catch (error) {
 									showToastHandler("Login failed", "error")
 									console.log(error)
