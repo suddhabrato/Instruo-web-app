@@ -78,6 +78,9 @@ const SignUp = () => {
 
 								if (values.password.trim() === "")
 									errors.password = "Password cannot be empty"
+								else if (values.password.length < 8)
+									errors.password =
+										"Password must be atleast 8 characters"
 
 								if (values.password !== values.cpassword)
 									errors.cpassword = "Password does not match"
@@ -89,7 +92,15 @@ const SignUp = () => {
 								{ setSubmitting, resetForm }
 							) => {
 								try {
-									await axios.post("/api/v1/users/signup", {})
+									await axios.post("/api/v1/users/signup", {
+										name: values.name,
+										college: values.college,
+										course: values.course,
+										graduation_year: values.graduation_year,
+										email: values.email,
+										mobile: values.mobile,
+										password: values.password,
+									})
 
 									setSubmitting(false)
 									showToastHandler(
@@ -222,7 +233,7 @@ const SignUp = () => {
 										<Field
 											id="mobile"
 											type="tel"
-											maxlength="10"
+											maxLength="10"
 											name="mobile"
 											className="input input-bordered"
 										/>

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import axios from "axios"
@@ -62,7 +62,8 @@ const LogIn = () => {
 								try {
 									const { data: res } = await axios.post(
 										"/api/v1/users/login",
-										values
+										values,
+										{ withCredentials: true }
 									)
 									// console.log(res)
 									localStorage.setItem(
