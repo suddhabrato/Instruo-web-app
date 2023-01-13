@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import axios from "axios"
@@ -11,6 +11,10 @@ import Loader from "../Shared/Loader"
 const LogIn = () => {
 	const { setLoginUser, showToastHandler } = useStateContext()
 	const navigate = useNavigate()
+
+	useEffect(() => {
+		if (localStorage.getItem("user")) navigate("/")
+	}, [navigate])
 
 	return (
 		<div>
@@ -56,19 +60,19 @@ const LogIn = () => {
 								{ setSubmitting, resetForm }
 							) => {
 								try {
-									const { data } = await axios.post(
+									const { data: res } = await axios.post(
 										"/api/v1/users/login",
 										values
 									)
-
+									// console.log(res)
 									localStorage.setItem(
 										"user",
 										JSON.stringify({
-											...data.user,
+											...res.data.user,
 										})
 									)
 
-									setLoginUser({ ...data.user })
+									setLoginUser({ ...res.data.user })
 
 									setSubmitting(false)
 

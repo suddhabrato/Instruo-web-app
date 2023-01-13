@@ -1,5 +1,5 @@
-import React from "react"
-import { Link, useNavigate } from "react-router-dom"
+import React, { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import axios from "axios"
 
@@ -9,6 +9,13 @@ import logo from "../../assets/logo-static.svg"
 import Loader from "../Shared/Loader"
 
 const SignUp = () => {
+	const navigate = useNavigate()
+	const { showToastHandler } = useStateContext()
+
+	useEffect(() => {
+		if (localStorage.getItem("user")) navigate("/")
+	}, [navigate])
+
 	return (
 		<div>
 			<HeroSection
@@ -77,10 +84,24 @@ const SignUp = () => {
 
 								return errors
 							}}
-							onSubmit={async (values, {}) => {
+							onSubmit={async (
+								values,
+								{ setSubmitting, resetForm }
+							) => {
 								try {
+									await axios.post("/api/v1/users/signup", {})
+
+									setSubmitting(false)
+									showToastHandler(
+										"Registration successful",
+										"success"
+									)
+									navigate("/login")
 								} catch (error) {
-									showToastHandler("Login failed", "error")
+									showToastHandler(
+										"Registration failed",
+										"error"
+									)
 									console.log(error)
 									resetForm()
 									setSubmitting(false)

@@ -1,11 +1,11 @@
 import React from "react"
-import { useStateContext } from "../contexts/ContextProvider"
+import { useStateContext } from "../../Contexts/ContextProvider"
 
 const Toast = () => {
 	const { toast } = useStateContext()
 
 	return toast.show ? (
-		<div className="toast toast-top toast-end z-[1500]">
+		<div className="toast toast-top toast-start z-[1500]">
 			<div
 				className={`alert alert-${toast.type} shadow-lg text-white font-bold`}>
 				<div>
