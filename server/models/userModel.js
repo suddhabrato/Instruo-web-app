@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema({
 		required: [true, "Please enter your course name"],
 	},
 	graduation_year: {
-		type: Number,
+		type: String,
 		required: [true, "Enter your year"],
 	},
 	events: [
