@@ -1,21 +1,23 @@
-import React from "react"
-import { useRef } from "react"
+import React from "react";
+import { useRef } from "react";
 
-import About from "./About"
-import Hero from "./Hero"
-import Sponsors from "./Sponsors"
+import About from "./About";
+import Carousel from "./Carousel";
+import Hero from "./Hero";
+import Sponsors from "./Sponsors";
 
 const Home = () => {
-	const aboutRef = useRef()
+  const aboutRef = useRef();
 
-	return (
-		<>
-			<Hero aboutRef={aboutRef} />
-			<About aboutRef={aboutRef} />
-			{/* <EventCards /> */}
-			<Sponsors />
-		</>
-	)
-}
+  return (
+    <>
+      <Hero aboutRef={aboutRef} />
+      <About aboutRef={aboutRef} />
+      {/* <EventCards /> */}
+      <Carousel />
+      <Sponsors />
+    </>
+  );
+};
 
-export default Home
+export default Home;
