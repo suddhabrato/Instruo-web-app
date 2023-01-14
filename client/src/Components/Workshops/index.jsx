@@ -9,7 +9,7 @@ const Workshops = () => {
 	const [loading, setLoading] = useState(true)
 	useEffect(() => {
 		axios
-			.get("http://localhost:3000/api/v1/workshops ", {
+			.get("/api/v1/workshops", {
 				headers: {
 					Accept: "application/json",
 				},

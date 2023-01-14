@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import axios from "axios"
@@ -9,6 +9,13 @@ import logo from "../../assets/logo-static.svg"
 import Loader from "../Shared/Loader"
 
 const LogIn = () => {
+	const { setLoginUser, showToastHandler } = useStateContext()
+	const navigate = useNavigate()
+
+	useEffect(() => {
+		if (localStorage.getItem("user")) navigate("/")
+	}, [navigate])
+
 	return (
 		<div>
 			<HeroSection
@@ -53,41 +60,28 @@ const LogIn = () => {
 								{ setSubmitting, resetForm }
 							) => {
 								try {
-									const { data } = await axios.post(
+									const { data: res } = await axios.post(
 										"/api/v1/users/login",
-										values
+										values,
+										{ withCredentials: true }
 									)
-									const { data: setting } = await axios.post(
-										"/api/v1/settings/get-setting",
-										{ userid: values.email }
-									)
+									// console.log(res)
 									localStorage.setItem(
 										"user",
 										JSON.stringify({
-											...data.user,
-											password: "",
+											...res.data.user,
 										})
 									)
-									localStorage.setItem(
-										"setting",
-										JSON.stringify(setting)
-									)
-									setLoginUser({ ...data.user, password: "" })
-									setUserSetting(setting)
+
+									setLoginUser({ ...res.data.user })
+
 									setSubmitting(false)
-									if (setting.budget === 0) {
-										showToastHandler(
-											"Please set budget & categories",
-											"warning"
-										)
-										navigate("/settings")
-									} else {
-										showToastHandler(
-											"Login successful",
-											"success"
-										)
-										navigate("/")
-									}
+
+									showToastHandler(
+										"Login successful",
+										"success"
+									)
+									navigate("/")
 								} catch (error) {
 									showToastHandler("Login failed", "error")
 									console.log(error)

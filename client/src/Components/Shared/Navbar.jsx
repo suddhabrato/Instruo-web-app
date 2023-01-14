@@ -1,10 +1,18 @@
-import { React, useState } from "react"
-import { NavLink } from "react-router-dom"
+import React from "react"
+import { NavLink, useNavigate } from "react-router-dom"
 import { useStateContext } from "../../Contexts/ContextProvider"
 import logo from "../../assets/logo.svg"
 
 const NavBar = () => {
-	const { loginUser, setLoginUser } = useStateContext()
+	const { loginUser, setLoginUser, showToastHandler } = useStateContext()
+	const navigate = useNavigate()
+
+	const logoutHandler = () => {
+		localStorage.removeItem("user")
+		setLoginUser("")
+		showToastHandler("Logout successful", "success")
+		navigate("/")
+	}
 
 	return (
 		<nav className="sticky top-[1rem] z-50 navbar bg-base-300 rounded-box bg-opacity-60 mt-[1rem] backdrop-blur transition-all duration-100 text-base-content shadow-sm w-11/12 mx-auto">
@@ -90,7 +98,7 @@ const NavBar = () => {
 							<li>
 								<NavLink to="/profile">Profile</NavLink>
 							</li>
-							<li>
+							<li onClick={logoutHandler}>
 								<a>Logout</a>
 							</li>
 						</ul>

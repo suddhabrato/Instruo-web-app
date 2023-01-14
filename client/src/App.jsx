@@ -3,6 +3,7 @@ import { Route, Routes, useParams } from "react-router-dom"
 
 import Navbar from "./Components/Shared/Navbar"
 import Footer from "./Components/Shared/Footer"
+import Toast from "./Components/Shared/Toast"
 import Sponsors from "./Components/Sponsors/Sponsors"
 import Home from "./Components/Home"
 import Events from "./Components/Events"
@@ -42,7 +43,7 @@ const App = () => {
 				<Route path="/login" element={<LogIn />} />
 				<Route path="/profile" element={<Profile />} />
 			</Routes>
-
+			<Toast />
 			<Footer />
 		</div>
 	)

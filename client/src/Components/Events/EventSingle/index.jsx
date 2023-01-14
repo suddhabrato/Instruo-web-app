@@ -10,7 +10,7 @@ const EventSingle = ({ eventId }) => {
 	const [loading, setLoading] = useState(true)
 	useEffect(() => {
 		axios
-			.get(`http://localhost:3000/api/v1/events/${eventId}`, {
+			.get(`/api/v1/events/${eventId}`, {
 				headers: {
 					Accept: "application/json",
 				},
@@ -22,7 +22,7 @@ const EventSingle = ({ eventId }) => {
 	}, [])
 
 	return (
-		<>
+		<div>
 			{loading ? (
 				<div className="text-center p-10">
 					<Loader />
@@ -51,7 +51,7 @@ const EventSingle = ({ eventId }) => {
 					<Register />
 				</div>
 			)}
-		</>
+		</div>
 	)
 }
 

@@ -17,7 +17,7 @@ const Hero = ({ aboutRef }) => {
 				</Canvas>
 			</div>
 
-			<div className="hero-content text-center pointer-events-auto">
+			<div className="hero-content text-center pointer-events-none">
 				<div className="max-w-md text-white bg-slate-50 backdrop-blur-sm bg-opacity-10 p-5 rounded-lg">
 					<img
 						src={logo}
@@ -25,15 +25,15 @@ const Hero = ({ aboutRef }) => {
 						width="25%"
 						height="25%"
 					/>
-					<h1 className="mb-5 text-5xl font-bold">Instruo 2k22</h1>
+					<h1 className="mb-5 text-5xl font-bold">Instruo 2k23</h1>
 					<p className="mb-5">
-						Provident cupiditate voluptatem et in. Quaerat fugiat ut
-						assumenda excepturi exercitationem quasi. In deleniti
-						eaque aut repudiandae et a id nisi.
+						{
+							"Kolkata's largest Techfest organised by IIEST, Shibpur (formerly BESU, Shibpur)"
+						}
 					</p>
 					<Countdown />
 					<Link to="/events">
-						<button className="btn btn-primary pointer-events-auto">
+						<button className="btn btn-primary pointer-events-auto lg:hidden">
 							View Events
 						</button>
 					</Link>
