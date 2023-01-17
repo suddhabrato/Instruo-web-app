@@ -4,9 +4,9 @@ const TShirtCTA = () => {
   return (
     <div className="w-full flex flex-col lg:flex-row my-32 gap-20">
       <div className="lg:w-1/3 mx-4 flex justify-center">
-        <div className="p-8 border-8 -skew-x-6 -skew-y-3 border-primary w-60 h-60 lg:w-96 lg:h-96 shadow-xl hover:brightness-110 transition-all duration-300">
+        <div className="p-8 border-8 -skew-x-6 -skew-y-3 border-primary w-72 h-72 lg:w-96 lg:h-96 shadow-xl hover:brightness-110 transition-all duration-300">
           <img
-            className="relative inset -top-24 w-60 h-60 lg:w-80 lg:h-96 hover:shadow-3xl hover:-translate-y-4 transition-all duration-300 hover:scale-105 brightness-100"
+            className="relative inset -top-24 w-72 h-72 lg:w-80 lg:h-96 hover:shadow-3xl hover:-translate-y-4 transition-all duration-300 hover:scale-105 brightness-100"
             src="https://images-platform.99static.com//oHn-goPC3-wgPReoEEY3U5Pt_yE=/0x0:1400x1400/fit-in/590x590/99designs-contests-attachments/76/76281/attachment_76281070"
           />
         </div>
