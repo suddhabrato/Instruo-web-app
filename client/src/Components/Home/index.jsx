@@ -7,6 +7,7 @@ import Carousel from "./Carousel";
 import Hero from "./Hero";
 import Sponsors from "./Sponsors";
 import Stats from "./Stats";
+import Timeline from "./Timeline";
 
 const Home = () => {
   const aboutRef = useRef();
@@ -36,6 +37,7 @@ const Home = () => {
               View all workshops
             </Link>
           </div>
+          <Timeline />
           <Carousel />
         </div>
       </div>
