@@ -8,6 +8,7 @@ import Hero from "./Hero";
 import Sponsors from "./Sponsors";
 import Stats from "./Stats";
 import Timeline from "./Timeline";
+import TShirtCTA from "./TShirtCTA";
 
 const Home = () => {
   const aboutRef = useRef();
@@ -39,6 +40,7 @@ const Home = () => {
           </div>
           <Timeline />
           <Carousel />
+          <TShirtCTA />
         </div>
       </div>
       <Sponsors />
