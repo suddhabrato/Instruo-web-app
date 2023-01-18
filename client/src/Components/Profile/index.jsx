@@ -16,11 +16,12 @@ const Profile = () => {
 				"/api/v1/users",
 				{
 					id: loginUser._id,
-				},
-				{ withCredentials: true }
+				}
+				// { withCredentials: true }
 			)
 
 			setUserDetails({ ...res.data.user })
+			console.log(res)
 			setLoading(false)
 		} catch (error) {
 			console.log(error)

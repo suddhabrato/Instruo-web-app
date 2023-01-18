@@ -12,7 +12,7 @@ const About = ({ aboutRef }) => {
 						id="about">
 						About Us
 					</h2>
-					<div className="card card-side bg-base-100 shadow-xl hover:scale-105">
+					<div className="card card-side bg-base-100 shadow-xl">
 						<figure className="w-1/3">
 							<img
 								src="https://images.pexels.com/photos/13268789/pexels-photo-13268789.jpeg"
