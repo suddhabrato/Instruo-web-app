@@ -2,6 +2,7 @@ import React from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import { useStateContext } from "../../Contexts/ContextProvider"
 import logo from "../../assets/logo.svg"
+import axios from "axios"
 
 const NavBar = () => {
 	const { loginUser, setLoginUser, showToastHandler } = useStateContext()
@@ -10,6 +11,7 @@ const NavBar = () => {
 	const logoutHandler = () => {
 		localStorage.removeItem("user")
 		setLoginUser("")
+		// await axios.post("/api/v1/users/logout", {}, { withCredentials: true })
 		showToastHandler("Logout successful", "success")
 		navigate("/")
 	}

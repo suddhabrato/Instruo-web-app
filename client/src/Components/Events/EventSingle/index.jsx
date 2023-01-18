@@ -4,21 +4,32 @@ import EventDetails from "./EventDetails"
 import HeroSection from "../../Shared/HeroSection"
 import axios from "axios"
 import Loader from "../../Shared/Loader"
+import { useStateContext } from "../../../Contexts/ContextProvider"
 
 const EventSingle = ({ eventId }) => {
-	const [event, getEvent] = useState()
+	const { loginUser } = useStateContext()
+
+	const [event, setEvent] = useState()
 	const [loading, setLoading] = useState(true)
+
+	const getEventDetails = async () => {
+		try {
+			let res
+			if (loginUser)
+				({ data: res } = await axios.post(`/api/v1/events/${eventId}`, {
+					userId: loginUser._id,
+				}))
+			else ({ data: res } = await axios.post(`/api/v1/events/${eventId}`))
+			console.log(res)
+			setEvent(res.data.event)
+			setLoading(false)
+		} catch (error) {
+			console.log(error)
+		}
+	}
+
 	useEffect(() => {
-		axios
-			.get(`/api/v1/events/${eventId}`, {
-				headers: {
-					Accept: "application/json",
-				},
-			})
-			.then((res) => {
-				getEvent(res.data.data.event)
-				setLoading(false)
-			})
+		getEventDetails()
 	}, [])
 
 	return (
@@ -47,8 +58,10 @@ const EventSingle = ({ eventId }) => {
 							},
 						]}
 					/>
-					<EventDetails {...event} />
-					<Register />
+					<div>
+						<EventDetails {...event} />
+						<Register {...event} />
+					</div>
 				</div>
 			)}
 		</div>
