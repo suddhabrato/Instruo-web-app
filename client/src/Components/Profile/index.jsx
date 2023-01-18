@@ -12,13 +12,9 @@ const Profile = () => {
 
 	async function getUserDetails() {
 		try {
-			const { data: res } = await axios.get(
-				"/api/v1/users",
-				{
-					id: loginUser._id,
-				}
-				// { withCredentials: true }
-			)
+			const { data: res } = await axios.get("/api/v1/users", {
+				id: loginUser._id,
+			})
 
 			setUserDetails({ ...res.data.user })
 			console.log(res)
