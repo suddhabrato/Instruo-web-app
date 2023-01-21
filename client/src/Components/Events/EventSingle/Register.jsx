@@ -73,7 +73,7 @@ const Register = ({ isRegistered, type, eventId }) => {
 						<RegisterModal type={type} eventId={eventId} />
 					</div>
 				</div>
-				{isRegistered && <TeamTable />}
+				{isRegistered && type !== "Individual" && <TeamTable />}
 			</div>
 		</div>
 	)
