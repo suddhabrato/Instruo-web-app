@@ -1,7 +1,7 @@
 import React from "react"
 import { useCountdown } from "../../Hooks/useCountdown"
 
-const date = new Date("2023-02-02T18:30:00.000Z")
+const date = new Date("2023-02-09T18:30:00.000Z")
 const targetDate = date.getTime()
 
 const Countdown = () => {

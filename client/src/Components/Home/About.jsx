@@ -3,10 +3,10 @@ import React from "react"
 const About = ({ aboutRef }) => {
 	return (
 		<div
-			className="hero bg-base-100 text-base-content mx-auto min-h-screen max-w-md md:max-w-full"
+			className="hero bg-base-200 text-base-content mx-auto min-h-screen max-w-md md:max-w-full py-16"
 			ref={aboutRef}>
 			<div className="hero-content px-4 md:px-2 text-center">
-				<div className="flex flex-col gap-16 mt-16">
+				<div className="flex flex-col gap-16">
 					<h2
 						className="text-5xl font-extrabold md:text-6xl"
 						id="about">
