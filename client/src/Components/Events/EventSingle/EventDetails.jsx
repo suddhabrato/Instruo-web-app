@@ -1,10 +1,10 @@
-import React from "react"
-import Faq from "./Faq"
-import Rules from "./Rules"
-import About from "./About"
-import Schedule from "./Schedule"
-import Prizes from "./Prizes"
-import Contacts from "./Contacts"
+import React from "react";
+import Faq from "./Faq";
+import Rules from "./Rules";
+import About from "./About";
+import Schedule from "./Schedule";
+import Prizes from "./Prizes";
+import Contacts from "./Contacts";
 
 const EventDetails = ({ desc, rules, schedule, contacts, faq, prizes }) => {
 	return (
@@ -25,4 +25,4 @@ const EventDetails = ({ desc, rules, schedule, contacts, faq, prizes }) => {
 	)
 }
 
-export default EventDetails
+export default EventDetails;
