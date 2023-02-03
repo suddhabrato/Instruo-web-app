@@ -3,7 +3,7 @@ import { useStateContext } from "../../../Contexts/ContextProvider"
 import RegisterModal from "./RegisterModal"
 import TeamTable from "./TeamTable"
 
-const Register = ({ isRegistered, type, eventId }) => {
+const Register = ({ isRegistered, type, eventId, team }) => {
 	const { loginUser } = useStateContext()
 
 	if (!loginUser)
@@ -80,7 +80,7 @@ const Register = ({ isRegistered, type, eventId }) => {
 						</div>
 					</div>
 				</div>
-				{isRegistered && type === "Team" && <TeamTable />}
+				{isRegistered && type === "Team" && <TeamTable {...team} />}
 			</div>
 		</div>
 	)

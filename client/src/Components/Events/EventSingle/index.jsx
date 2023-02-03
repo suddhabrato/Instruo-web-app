@@ -9,7 +9,8 @@ import { useStateContext } from "../../../Contexts/ContextProvider"
 const EventSingle = ({ eventId }) => {
 	const { loginUser } = useStateContext()
 
-	const [event, setEvent] = useState()
+	const [event, setEvent] = useState("")
+	const [team, setTeam] = useState("")
 	const [isRegistered, setIsRegistered] = useState(false)
 	const [loading, setLoading] = useState(true)
 
@@ -23,6 +24,7 @@ const EventSingle = ({ eventId }) => {
 			else ({ data: res } = await axios.post(`/api/v1/events/${eventId}`))
 			console.log(res)
 			setEvent(res.data.event)
+			setTeam(res.data.team)
 			setIsRegistered(res.data.isRegistered)
 			setLoading(false)
 		} catch (error) {
@@ -66,7 +68,11 @@ const EventSingle = ({ eventId }) => {
 							<h2 className="mb-8 text-5xl font-bold text-center">
 								Registration Status
 							</h2>
-							<Register {...event} isRegistered={isRegistered} />
+							<Register
+								{...event}
+								team={team}
+								isRegistered={isRegistered}
+							/>
 						</div>
 					</div>
 				</div>
