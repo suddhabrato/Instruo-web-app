@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import { useStateContext } from "../../Contexts/ContextProvider"
 import logo from "../../assets/logo.svg"
 import axios from "axios"
+import Loader from "./Loader"
 
 const NavBar = () => {
 	const { loginUser, setLoginUser, showToastHandler } = useStateContext()
+	const [notifs, setNotifs] = useState([])
 	const navigate = useNavigate()
 
 	const logoutHandler = () => {
@@ -14,6 +16,43 @@ const NavBar = () => {
 		setLoginUser("")
 		showToastHandler("Logout successful", "success")
 		navigate("/")
+	}
+
+	const getNotifications = async () => {
+		try {
+			const { data } = await axios.get("/api/v1/notif/")
+			console.log(data)
+			setNotifs(data.notifs.reverse())
+		} catch (error) {
+			console.log(error)
+		}
+	}
+
+	const timeSince = (date) => {
+		var seconds = Math.floor((new Date() - date) / 1000)
+
+		var interval = seconds / 31536000
+
+		if (interval > 1) {
+			return Math.floor(interval) + " years"
+		}
+		interval = seconds / 2592000
+		if (interval > 1) {
+			return Math.floor(interval) + " months"
+		}
+		interval = seconds / 86400
+		if (interval > 1) {
+			return Math.floor(interval) + " days"
+		}
+		interval = seconds / 3600
+		if (interval > 1) {
+			return Math.floor(interval) + " hours"
+		}
+		interval = seconds / 60
+		if (interval > 1) {
+			return Math.floor(interval) + " minutes"
+		}
+		return Math.floor(seconds) + " seconds"
 	}
 
 	return (
@@ -87,21 +126,59 @@ const NavBar = () => {
 			<div className="navbar-end">
 				{loginUser ? (
 					<div className="flex items-center">
-						<button className="btn btn-ghost btn-circle">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								className="h-8 w-8"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor">
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-								/>
-							</svg>
-						</button>
+						<div className="dropdown dropdown-end">
+							<label
+								tabIndex={0}
+								className="btn btn-ghost btn-circle"
+								onClick={getNotifications}>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									className="h-8 w-8"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor">
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth="2"
+										d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+									/>
+								</svg>
+							</label>
+							<ul
+								tabIndex={0}
+								className="dropdown-content p-2 shadow bg-base-100 rounded-box w-52">
+								{notifs?.length > 0 ? (
+									notifs?.map((n, i) => (
+										<li
+											className="p-2 my-2 border rounded-lg"
+											key={i}>
+											<h5 className="font-bold text-lg">
+												{n.title}
+											</h5>
+											<p className="text-md leading-tight mt-2">
+												{n.desc}
+											</p>
+											<p>
+												{timeSince(
+													new Date(
+														Date.now() -
+															Date.parse(
+																n.created_at
+															)
+													)
+												)}
+											</p>
+										</li>
+									))
+								) : (
+									<div className="flex justify-center">
+										<Loader />
+									</div>
+								)}
+							</ul>
+						</div>
+
 						<div className="dropdown dropdown-end mr-3">
 							<label
 								tabIndex={0}
