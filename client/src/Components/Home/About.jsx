@@ -3,7 +3,7 @@ import React from "react"
 const About = ({ aboutRef }) => {
 	return (
 		<div
-			className="hero bg-base-200 text-base-content mx-auto min-h-screen max-w-md md:max-w-full py-16"
+			className="hero bg-base-200 text-base-content mx-auto py-16 px-8"
 			ref={aboutRef}>
 			<div className="hero-content px-4 md:px-2 text-center">
 				<div className="flex flex-col gap-16">
