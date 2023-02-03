@@ -13,12 +13,23 @@ const Profile = () => {
 
 	async function getUserDetails() {
 		try {
-			const { data: res } = await axios.get("/api/v1/users", {
-				id: loginUser._id,
-			})
+			const { data: res } = await axios.post(
+				"/api/v1/users",
+				{
+					id: loginUser._id,
+				},
+				{
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem(
+							"token"
+						)}`,
+					},
+				}
+			)
 
-			setUserDetails({ ...res.data.user })
 			console.log(res)
+			setUserDetails({ ...res.user })
 			setLoading(false)
 		} catch (error) {
 			console.log(error)
@@ -89,38 +100,45 @@ const Profile = () => {
 					<h3 className="mt-6 text-3xl text-center font-bold underline">
 						Registered Events
 					</h3>
-					<div className="overflow-x-auto mt-4">
-						<table className="table table-zebra w-full">
-							<thead>
-								<tr>
-									<th></th>
-									<th>Name</th>
-									<th>Team Name</th>
-									<th>Details</th>
-								</tr>
-							</thead>
-							<tbody>
-								{userDetails.events.map((ev, i) => (
-									<tr key={i}>
-										<td>{i + 1}</td>
-										<td>{ev.eventId.title}</td>
-										{ev.eventId.type === "Individual" ? (
-											<td>Solo event</td>
-										) : (
-											<td>{ev.eventId.team}</td>
-										)}
-										<td>
-											<Link
-												className="btn btn-sm btn-primary"
-												to={`/events/${ev.eventId.eventId}`}>
-												Details
-											</Link>
-										</td>
+					{userDetails.events.length > 0 ? (
+						<div className="overflow-x-auto mt-4">
+							<table className="table table-zebra w-full">
+								<thead>
+									<tr>
+										<th></th>
+										<th>Name</th>
+										<th>Team Name</th>
+										<th>Details</th>
 									</tr>
-								))}
-							</tbody>
-						</table>
-					</div>
+								</thead>
+								<tbody>
+									{userDetails.events.map((ev, i) => (
+										<tr key={i}>
+											<td>{i + 1}</td>
+											<td>{ev.eventId.title}</td>
+											{ev.eventId.type ===
+											"Individual" ? (
+												<td>Solo event</td>
+											) : (
+												<td>{ev.teamId.teamName}</td>
+											)}
+											<td>
+												<Link
+													className="btn btn-sm btn-primary"
+													to={`/events/${ev.eventId.eventId}`}>
+													Details
+												</Link>
+											</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+					) : (
+						<div className="text-center my-4">
+							Not registered for any events
+						</div>
+					)}
 				</div>
 			)}
 		</div>

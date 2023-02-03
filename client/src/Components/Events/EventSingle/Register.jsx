@@ -70,10 +70,17 @@ const Register = ({ isRegistered, type, eventId }) => {
 						className="modal-toggle"
 					/>
 					<div className="modal sm:modal-middle">
-						<RegisterModal type={type} eventId={eventId} />
+						<div className="modal-box">
+							<label
+								htmlFor="my-modal-6"
+								className="btn btn-sm btn-circle absolute right-2 top-2">
+								✕
+							</label>
+							<RegisterModal type={type} eventId={eventId} />
+						</div>
 					</div>
 				</div>
-				{isRegistered && type !== "Individual" && <TeamTable />}
+				{isRegistered && type === "Team" && <TeamTable />}
 			</div>
 		</div>
 	)

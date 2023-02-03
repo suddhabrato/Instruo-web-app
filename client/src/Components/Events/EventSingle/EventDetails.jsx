@@ -15,7 +15,7 @@ const EventDetails = ({ desc, rules, schedule, contacts, faq, prizes }) => {
 						<About desc={desc} />
 						<Rules rules={rules} />
 						<Schedule schedule={schedule} />
-						<Faq faq={faq} />
+						{/* <Faq faq={faq} /> */}
 						<Contacts contacts={contacts} />
 						<Prizes prizes={prizes} />
 					</div>
