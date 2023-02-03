@@ -16,6 +16,7 @@ const WorkshopSingle = ({ workshopId }) => {
 				},
 			})
 			.then((res) => {
+				console.log(res.data)
 				getWorkshop(res.data.data.workshop)
 				setLoading(false)
 			})

@@ -84,12 +84,16 @@ const NavBar = () => {
 						<li>
 							<NavLink to="/contactus">Contact Us</NavLink>
 						</li>
-						<li>
-							<NavLink to="/login">Log In</NavLink>
-						</li>
-						<li>
-							<NavLink to="/signup">Register</NavLink>
-						</li>
+						{!loginUser && (
+							<>
+								<li>
+									<NavLink to="/login">Log In</NavLink>
+								</li>
+								<li>
+									<NavLink to="/signup">Register</NavLink>
+								</li>
+							</>
+						)}
 					</ul>
 				</div>
 				<NavLink to="/" className="btn btn-ghost normal-case text-xl">
