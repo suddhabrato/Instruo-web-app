@@ -32,11 +32,14 @@ const Hero = ({ aboutRef }) => {
 						}
 					</p>
 					<Countdown />
-					<Link to="/events">
+					{/* <Link to="/events">
 						<button className="btn btn-primary pointer-events-auto lg:hidden">
 							View Events
 						</button>
-					</Link>
+					</Link> */}
+					<div className="text-xl font-bold uppercase animate-pulse">
+						to start
+					</div>
 				</div>
 			</div>
 			<div

@@ -62,7 +62,12 @@ const EventSingle = ({ eventId }) => {
 					/>
 					<div>
 						<EventDetails {...event} />
-						<Register {...event} isRegistered={isRegistered} />
+						<div className="">
+							<h2 className="mb-8 text-5xl font-bold text-center">
+								Registration Status
+							</h2>
+							<Register {...event} isRegistered={isRegistered} />
+						</div>
 					</div>
 				</div>
 			)}
