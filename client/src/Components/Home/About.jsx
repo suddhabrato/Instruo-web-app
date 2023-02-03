@@ -1,10 +1,8 @@
 import React from "react"
 
-const About = ({ aboutRef }) => {
+const About = () => {
 	return (
-		<div
-			className="hero bg-base-200 text-base-content mx-auto py-16 px-8"
-			ref={aboutRef}>
+		<div className="hero bg-base-200 text-base-content mx-auto py-16 px-8">
 			<div className="hero-content px-4 md:px-2 text-center">
 				<div className="flex flex-col gap-16">
 					<h2

@@ -43,9 +43,23 @@ const Hero = ({ aboutRef }) => {
 				</div>
 			</div>
 			<div
-				className="text-white text-lg font-bold bottom-2 absolute animate-bounce cursor-pointer"
+				className="text-white text-lg font-bold bottom-2 absolute animate-bounce cursor-pointer select-none"
 				onClick={() => aboutRef.current.scrollIntoView()}>
-				click to scroll down
+				<svg
+					fill="none"
+					stroke="currentColor"
+					className="h-8 w-8 mx-auto"
+					strokeWidth={1.5}
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true">
+					<path
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
+					/>
+				</svg>
+				scroll down
 			</div>
 		</div>
 	)
