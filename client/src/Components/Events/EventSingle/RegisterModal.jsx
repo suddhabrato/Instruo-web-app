@@ -32,6 +32,7 @@ const RegisterModal = ({ type, eventId }) => {
 			)
 			showToastHandler("Individual registration successful", "success")
 			setLoading(false)
+			navigate(0)
 		} catch (error) {
 			console.log(error)
 			showToastHandler("Individual registration failed", "error")

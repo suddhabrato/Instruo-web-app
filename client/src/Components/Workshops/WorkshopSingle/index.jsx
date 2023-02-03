@@ -47,7 +47,12 @@ const WorkshopSingle = ({ workshopId }) => {
 						]}
 					/>
 					<WorkshopDetails {...workshop} />
-					<Register />
+					<div className="">
+						<h2 className="mb-8 text-5xl font-bold text-center">
+							Registration Status
+						</h2>
+						<Register />
+					</div>
 				</div>
 			)}
 		</div>
