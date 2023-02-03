@@ -10,6 +10,7 @@ const EventSingle = ({ eventId }) => {
 	const { loginUser } = useStateContext()
 
 	const [event, setEvent] = useState()
+	const [isRegistered, setIsRegistered] = useState(false)
 	const [loading, setLoading] = useState(true)
 
 	const getEventDetails = async () => {
@@ -22,6 +23,7 @@ const EventSingle = ({ eventId }) => {
 			else ({ data: res } = await axios.post(`/api/v1/events/${eventId}`))
 			console.log(res)
 			setEvent(res.data.event)
+			setIsRegistered(res.data.isRegistered)
 			setLoading(false)
 		} catch (error) {
 			console.log(error)
@@ -60,7 +62,7 @@ const EventSingle = ({ eventId }) => {
 					/>
 					<div>
 						<EventDetails {...event} />
-						<Register {...event} />
+						<Register {...event} isRegistered={isRegistered} />
 					</div>
 				</div>
 			)}

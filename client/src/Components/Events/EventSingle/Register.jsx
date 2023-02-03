@@ -1,8 +1,9 @@
 import React from "react"
 import { useStateContext } from "../../../Contexts/ContextProvider"
+import RegisterModal from "./RegisterModal"
 import TeamTable from "./TeamTable"
 
-const Register = ({ isRegistered }) => {
+const Register = ({ isRegistered, type, eventId }) => {
 	const { loginUser } = useStateContext()
 
 	if (!loginUser)
@@ -69,30 +70,10 @@ const Register = ({ isRegistered }) => {
 						className="modal-toggle"
 					/>
 					<div className="modal sm:modal-middle">
-						<div className="modal-box">
-							<h3 className="font-bold text-lg">
-								Confirm Registration
-							</h3>
-							<p className="py-4">
-								Are you sure you want to register for this
-								event?
-								<br /> Click Yes to proceed and NO to cancel.
-							</p>
-							<div className="modal-action">
-								<label htmlFor="my-modal-6" className="btn">
-									No
-								</label>
-								<a
-									href="/events"
-									htmlFor="my-modal-6"
-									className="btn btn-primary">
-									Yes
-								</a>
-							</div>
-						</div>
+						<RegisterModal type={type} eventId={eventId} />
 					</div>
 				</div>
-				<TeamTable />
+				{isRegistered && type !== "Individual" && <TeamTable />}
 			</div>
 		</div>
 	)

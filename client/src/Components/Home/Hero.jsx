@@ -10,7 +10,7 @@ import Countdown from "./Countdown"
 const Hero = ({ aboutRef }) => {
 	return (
 		<div className="hero min-h-screen -mt-[5rem] ">
-			<div className="hero-overlay">
+			<div className="hero-overlay bg-neutral">
 				<Canvas>
 					<HeroAnim />
 					<OrbitControls enableZoom={false} enabled={false} />

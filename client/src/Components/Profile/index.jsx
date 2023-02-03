@@ -4,27 +4,31 @@ import { useStateContext } from "../../Contexts/ContextProvider"
 
 import HeroSection from "../Shared/HeroSection"
 import Loader from "../Shared/Loader"
+import { Link } from "react-router-dom"
 
 const Profile = () => {
-	const { loginUser } = useStateContext()
+	const { loginUser, showToastHandler } = useStateContext()
 	const [userDetails, setUserDetails] = useState({})
 	const [loading, setLoading] = useState(true)
 
 	async function getUserDetails() {
 		try {
-			const { data: res } = await axios.get(
-				"/api/v1/users",
-				{
-					id: loginUser._id,
-				}
-				// { withCredentials: true }
-			)
+			const { data: res } = await axios.get("/api/v1/users", {
+				id: loginUser._id,
+			})
 
 			setUserDetails({ ...res.data.user })
 			console.log(res)
 			setLoading(false)
 		} catch (error) {
 			console.log(error)
+			setUserDetails(loginUser)
+			setLoading(false)
+			console.log(loginUser)
+			showToastHandler(
+				"User update failed. Showing older data",
+				"warning"
+			)
 		}
 	}
 
@@ -91,29 +95,29 @@ const Profile = () => {
 								<tr>
 									<th></th>
 									<th>Name</th>
-									<th>Job</th>
-									<th>Favorite Color</th>
+									<th>Team Name</th>
+									<th>Details</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<th>1</th>
-									<td>Cy Ganderton</td>
-									<td>Quality Control Specialist</td>
-									<td>Blue</td>
-								</tr>
-								<tr>
-									<th>2</th>
-									<td>Hart Hagerty</td>
-									<td>Desktop Support Technician</td>
-									<td>Purple</td>
-								</tr>
-								<tr>
-									<th>3</th>
-									<td>Brice Swyre</td>
-									<td>Tax Accountant</td>
-									<td>Red</td>
-								</tr>
+								{userDetails.events.map((ev, i) => (
+									<tr key={i}>
+										<td>{i + 1}</td>
+										<td>{ev.eventId.title}</td>
+										{ev.eventId.type === "Individual" ? (
+											<td>Solo event</td>
+										) : (
+											<td>{ev.eventId.team}</td>
+										)}
+										<td>
+											<Link
+												className="btn btn-sm btn-primary"
+												to={`/events/${ev.eventId.eventId}`}>
+												Details
+											</Link>
+										</td>
+									</tr>
+								))}
 							</tbody>
 						</table>
 					</div>
