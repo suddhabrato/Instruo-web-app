@@ -62,8 +62,7 @@ const LogIn = () => {
 								try {
 									const { data: res } = await axios.post(
 										"/api/v1/users/login",
-										values,
-										{ withCredentials: true }
+										values
 									)
 									// console.log(res)
 									localStorage.setItem(
@@ -72,7 +71,11 @@ const LogIn = () => {
 											...res.data.user,
 										})
 									)
-
+									localStorage.setItem(
+										"token",
+										res.data.token
+									)
+									
 									setLoginUser({ ...res.data.user })
 
 									setSubmitting(false)

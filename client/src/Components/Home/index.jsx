@@ -15,7 +15,7 @@ const Home = () => {
 	return (
 		<>
 			<Hero aboutRef={aboutRef} />
-			<div className="hero bg-base-200">
+			<div className="hero bg-base-200" ref={aboutRef}>
 				<div className="hero-content mx-auto my-16 flex flex-col gap-8">
 					<h2 className="text-5xl font-extrabold text-center px-4 mt-4 md:text-6xl">
 						What's in store for you?
@@ -36,7 +36,7 @@ const Home = () => {
 				</div>
 			</div>
 			<Timeline />
-			<About aboutRef={aboutRef} />
+			<About />
 			{/* <EventCards /> */}
 			<Carousel />
 			<TShirtCTA />
