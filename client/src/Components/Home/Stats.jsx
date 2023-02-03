@@ -64,7 +64,7 @@ const Stats = () => {
             {({ isVisible }) => (
               <span>
                 {isVisible ? (
-                  <CountUp end={120000} suffix="+" prefix="₹ " separator="," />
+                  <CountUp end={750000} suffix="+" prefix="₹ " separator="," />
                 ) : (
                   "0"
                 )}
