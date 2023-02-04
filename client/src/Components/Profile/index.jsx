@@ -96,7 +96,7 @@ const Profile = () => {
               <table className="table table-zebra w-full">
                 <thead>
                   <tr>
-                    <th></th>
+                    <td></td>
                     <th>Name</th>
                     <th>Team Name</th>
                     <th>Details</th>
