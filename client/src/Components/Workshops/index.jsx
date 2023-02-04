@@ -7,6 +7,7 @@ import Loader from "../Shared/Loader"
 const Workshops = () => {
 	const [workshops, getWorkshops] = useState()
 	const [loading, setLoading] = useState(true)
+
 	useEffect(() => {
 		axios
 			.get("/api/v1/workshops", {
@@ -19,6 +20,7 @@ const Workshops = () => {
 				setLoading(false)
 			})
 	}, [])
+
 	return (
 		<div>
 			<HeroSection
