@@ -28,14 +28,14 @@ const Profile = () => {
 				}
 			)
 
-			console.log(res)
+			// console.log(res)
 			setUserDetails({ ...res.user })
 			setLoading(false)
 		} catch (error) {
 			console.log(error)
 			setUserDetails(loginUser)
 			setLoading(false)
-			console.log(loginUser)
+			// console.log(loginUser)
 			showToastHandler(
 				"User update failed. Showing older data",
 				"warning"
@@ -53,7 +53,7 @@ const Profile = () => {
 			<HeroSection
 				title={"Your Profile"}
 				desc={
-					"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ullam?"
+					"Your profile and registrations at a glance"
 				}
 				breadParams={[
 					{

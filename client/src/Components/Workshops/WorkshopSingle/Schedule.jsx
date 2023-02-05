@@ -9,10 +9,10 @@ const Schedule = ({ schedule }) => {
 				<div
 					key={idx}
 					className="text-xl border-y mb-2 flex flex-col gap-2 p-4 items-center">
-					<p className="font-bold text-primary my-0">
+					<p className="font-bold text-primary my-0 text-center">
 						{round.title}:{" "}
 					</p>
-					<p className="my-0">
+					<p className="my-0 text-center">
 						{`${moment(round.date, moment.ISO_8601).format(
 							"ll"
 						)} @ ${round.time}`}

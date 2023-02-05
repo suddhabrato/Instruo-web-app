@@ -22,7 +22,7 @@ const EventSingle = ({ eventId }) => {
 					userId: loginUser._id,
 				}))
 			else ({ data: res } = await axios.post(`/api/v1/events/${eventId}`))
-			console.log(res)
+			// console.log(res)
 			setEvent(res.data.event)
 			setTeam(res.data.team)
 			setIsRegistered(res.data.isRegistered)

@@ -8,7 +8,7 @@ const Hero = () => {
 			<HeroSection
 				title={"Sponsors"}
 				desc={
-					"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ullam?"
+					"Thanks to all our valuable sponsors for making Instruo a success"
 				}
 				breadParams={[
 					{

@@ -5,6 +5,7 @@ import ContactCard from "./ContactCard"
 
 import devanshu from "../../assets/team/devanshu.jpg"
 import sudo from "../../assets/team/sudo.jpeg"
+import debopriya from "../../assets/team/debopriya.jpeg"
 import aditya from "../../assets/team/aditya.jpeg"
 
 const ContactUs = () => {
@@ -13,9 +14,7 @@ const ContactUs = () => {
 		<div>
 			<HeroSection
 				title={"Contact Us"}
-				desc={
-					"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ullam?"
-				}
+				desc={"The team behind Instruo 12.0"}
 				breadParams={[
 					{
 						title: "Instruo",
@@ -64,6 +63,12 @@ const ContactUs = () => {
 						name="Suddhabrato Ghosh"
 						role="Website Developer"
 						linkedinUrl="https://www.linkedin.com/in/suddhabrato-ghosh/"
+					/>
+					<ContactCard
+						avatarImg={debopriya}
+						name="Debopriya Roy"
+						role="Website Developer"
+						linkedinUrl="http://www.linkedin.com/in/debopriya-roy"
 					/>
 					<ContactCard
 						avatarImg={aditya}

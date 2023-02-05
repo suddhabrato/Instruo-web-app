@@ -21,7 +21,7 @@ const LogIn = () => {
       <HeroSection
         title={"Login"}
         desc={
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ullam?"
+          ""
         }
         breadParams={[
           {

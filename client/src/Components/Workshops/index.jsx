@@ -26,7 +26,7 @@ const Workshops = () => {
 			<HeroSection
 				title={"Workshops"}
 				desc={
-					"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ullam?"
+					""
 				}
 				breadParams={[
 					{
