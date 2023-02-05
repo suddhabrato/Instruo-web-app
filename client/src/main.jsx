@@ -7,8 +7,8 @@ import App from "./App"
 import "./index.css"
 import ScrollToTop from "./Utils/scrollToTop"
 
-// axios.defaults.baseURL = "https://instruo-server.onrender.com";
-axios.defaults.baseURL = "http://localhost:3000"
+axios.defaults.baseURL = "https://instruo-server.onrender.com"
+// axios.defaults.baseURL = "http://localhost:3000"
 axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*"
 axios.defaults.headers.common["Access-Control-Allow-Headers"] = "*"
 
