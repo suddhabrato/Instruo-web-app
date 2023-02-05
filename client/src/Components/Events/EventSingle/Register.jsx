@@ -38,7 +38,7 @@ const Register = ({
 
 	return (
 		<div className="bg-base-100 text-base-content mx-auto  max-w-md md:max-w-full">
-			<div className="text-center font-bold text-xl">{`Registration Amount: INR ${registration_amount}`}</div>
+			<div className="text-center font-bold text-xl">{`**Registration Amount: INR ${registration_amount}`}</div>
 			<div className="hero-content px-8 md:px-4 mx-auto flex flex-col">
 				{isRegistered ? (
 					<div className="alert alert-success shadow-lg">

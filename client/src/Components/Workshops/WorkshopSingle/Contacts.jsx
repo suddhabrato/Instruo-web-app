@@ -9,15 +9,21 @@ const Contacts = ({ contacts }) => {
 					<div key={idx}>
 						<h4 className="text-xl">{contact.name}</h4>
 						<p className="pl-1">
-							Phone:{" "}
-							<a href={`tel: ${contact.phone}`}>
-								+{contact.phone}
-							</a>
+							<span>
+								{"Phone: "}
+								<a href={`tel: ${contact.phone}`}>
+									+{contact.phone}
+								</a>
+							</span>
 							<br />
-							Email:{" "}
-							<a href={`mailto: ${contact.email}`}>
-								{contact.email}
-							</a>
+							{contact.email && (
+								<span>
+									{"Email: "}
+									<a href={`mailto: ${contact.email}`}>
+										{contact.email}
+									</a>
+								</span>
+							)}
 						</p>
 					</div>
 				))}
