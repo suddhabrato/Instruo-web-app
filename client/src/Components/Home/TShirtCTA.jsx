@@ -17,14 +17,15 @@ const TShirtCTA = () => {
           Get our official merchandise
         </h2>
         <p className="mt-8 text-center lg:text-start">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus,
-          placeat? Dolorem repellendus aspernatur, veritatis eligendi qui magni
-          blanditiis vero pariatur doloribus impedit optio laudantium soluta,
-          reprehenderit error temporibus. Consectetur, optio. Laudantium,
-          accusamus dolor. Iusto esse, ex in soluta perferendis hic nisi
-          necessitatibus? Animi optio sint neque vel fugiat similique placeat.
-          Odio sunt consequuntur explicabo quibusdam fuga sequi cumque, dolor
-          voluptatum?
+          Instruo 2023 is back with a bang, this time with a statement Tee!
+          <br />
+          Behold the uber-cool, ultra chic Instruo 2023 Tshirt! <br />
+          Flaunt this supercool and stylish tee and become a part of the new
+          rage this February! <br />
+          Complete your ensemble by acquiring this funky, avant-garde T-Shirt
+          and get some vibrant snapshots to show the world where you belong!
+          <br />
+          Set the trend with Instruo 2023!
         </p>
         <a
           href="https://forms.gle/afzw2MY6JKPF9gp36"
