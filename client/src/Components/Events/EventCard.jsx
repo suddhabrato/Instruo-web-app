@@ -15,7 +15,7 @@ const EventCard = ({ eventId, title, startDate, endDate, desc, image }) => {
 						10
 					)}`}
 				</div>
-				<p>{desc}</p>
+				<p>{desc.slice(0, 140)}...</p>
 				<div className="card-actions justify-end">
 					<Link to={`/events/${eventId}`}>
 						<button className="btn btn-primary">
