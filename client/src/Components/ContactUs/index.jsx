@@ -5,6 +5,7 @@ import ContactCard from "./ContactCard"
 
 import devanshu from "../../assets/team/devanshu.jpg"
 import sudo from "../../assets/team/sudo.jpeg"
+import aditya from "../../assets/team/aditya.jpeg"
 
 const ContactUs = () => {
 	const [tabActive, setTabActive] = useState(2)
@@ -65,10 +66,10 @@ const ContactUs = () => {
 						linkedinUrl="https://www.linkedin.com/in/suddhabrato-ghosh/"
 					/>
 					<ContactCard
-						avatarImg={{}}
+						avatarImg={aditya}
 						name="Aditya Das"
 						role="Website Developer"
-						linkedinUrl="https://www.linkedin.com/in/devanshu-chatterjee-517645200/"
+						linkedinUrl="https://www.linkedin.com/in/aditya-das-86069b202/"
 					/>
 				</div>
 			)}
