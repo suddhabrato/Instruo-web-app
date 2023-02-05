@@ -1,12 +1,13 @@
 import { React, useState, useEffect } from "react"
 import HeroSection from "../Shared/HeroSection"
-import EventCard from "./EventCard"
 import axios from "axios"
 import Loader from "../Shared/Loader"
+import EventsShowcase from "./EventsShowcase"
 
 const Events = () => {
-	const [events, getEvents] = useState()
+	const [events, setEvents] = useState()
 	const [loading, setLoading] = useState(true)
+
 	useEffect(() => {
 		axios
 			.get("/api/v1/events", {
@@ -15,17 +16,16 @@ const Events = () => {
 				},
 			})
 			.then((res) => {
-				getEvents(res.data.events)
+				setEvents(res.data.events)
 				setLoading(false)
 			})
 	}, [])
+
 	return (
 		<div>
 			<HeroSection
 				title={"Events"}
-				desc={
-					"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ullam?"
-				}
+				desc={""}
 				breadParams={[
 					{
 						title: "Instruo",
@@ -42,11 +42,7 @@ const Events = () => {
 					<Loader />
 				</div>
 			) : (
-				<div className="p-10 py-32 flex flex-wrap gap-10 justify-center">
-					{events.map((event, i) => (
-						<EventCard key={i} {...event} />
-					))}
-				</div>
+				<EventsShowcase events={events} />
 			)}
 		</div>
 	)

@@ -27,7 +27,7 @@ const WorkshopSingle = ({ workshopId }) => {
 				({ data: res } = await axios.post(
 					`/api/v1/workshops/${workshopId}`
 				))
-			console.log(res)
+			// console.log(res)
 			setWorkshop(res.data.workshop)
 			setIsRegistered(res.data.isRegistered)
 			setLoading(false)

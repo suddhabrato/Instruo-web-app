@@ -21,7 +21,7 @@ const SignUp = () => {
 			<HeroSection
 				title={"Register"}
 				desc={
-					"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ullam?"
+					""
 				}
 				breadParams={[
 					{

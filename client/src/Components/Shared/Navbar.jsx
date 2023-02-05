@@ -43,7 +43,7 @@ const NavBar = () => {
 	const getNotifications = async () => {
 		try {
 			const { data } = await axios.get("/api/v1/notif/")
-			console.log(data)
+			// console.log(data)
 			setNotifs(data.notifs.reverse())
 		} catch (error) {
 			console.log(error)
