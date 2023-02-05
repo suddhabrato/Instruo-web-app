@@ -47,6 +47,7 @@ const Profile = () => {
 		getUserDetails()
 	}, [])
 
+
 	return (
 		<div className="w-full flex flex-col">
 			<HeroSection
@@ -158,7 +159,6 @@ const Profile = () => {
 										<tr key={i}>
 											<td>{i + 1}</td>
 											<td>{wrk.title}</td>
-
 											<td>{wrk.subtitle}</td>
 
 											<td>
