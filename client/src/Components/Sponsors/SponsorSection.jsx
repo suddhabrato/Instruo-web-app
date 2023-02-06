@@ -14,10 +14,22 @@ const SponsorSection = ({ title, bg }) => {
 						name="Coding Ninjas"
 						logoUrl="https://files.codingninjas.in/0000000000000723.jpg"
 					/>
-					<SponsorCard name="T.I.M.E" logoUrl="" />
-					<SponsorCard name="Erudite" logoUrl="" />
-					<SponsorCard name="Roasted Cart" logoUrl="" />
-					<SponsorCard name="DTS (Deepak Tea Station)" logoUrl="" />
+					<SponsorCard
+						name="T.I.M.E"
+						logoUrl="https://scontent.fmaa8-1.fna.fbcdn.net/v/t39.30808-6/325987269_869845554291316_7388624397662696654_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=nAfw69BJQLUAX_jkB0a&_nc_ht=scontent.fmaa8-1.fna&oh=00_AfB4L8I9Hrh9IX2oqbTbqDaGCR4yArSMECTSMB1JozYsIQ&oe=63E52C23"
+					/>
+					<SponsorCard
+						name="Erudite"
+						logoUrl="https://erudite.in/wp-content/uploads/2018/08/logo-1.jpg"
+					/>
+					<SponsorCard
+						name="Roasted Cart"
+						logoUrl="https://scontent.fmaa8-1.fna.fbcdn.net/v/t39.30808-6/292564617_464861085639686_3011550964506932231_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=18zGgA9v3RMAX8Mz2AJ&_nc_ht=scontent.fmaa8-1.fna&oh=00_AfDDVohLZbaiU1xAlPK8F1ABEqti6yPsZvGB4rORfK7xbw&oe=63E5321A"
+					/>
+					<SponsorCard
+						name="DTS (Deepak Tea Station)"
+						logoUrl="https://lh3.googleusercontent.com/HEWv4kjFAu21IaIWEV0yz4TjDJ4wmc-CGed5NtTFPrOR3j8-bsBibu1pzbKWa8EN1GJ00y3HsLdJrNxr-Rr7yWTn1l0=w256-rw"
+					/>
 				</div>
 			</div>
 		</div>

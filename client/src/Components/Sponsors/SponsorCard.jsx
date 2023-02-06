@@ -7,7 +7,7 @@ const SponsorCard = ({ name, logoUrl }) => {
 			href="https://stackblitz.com/edit/daisyui-vite"
 			target="_blank"
 			rel="noopener">
-			<figure className="px-12 pt-6 pb-2 w-full aspect-[2/1] items-end">
+			<figure className="px-12 pt-6 pb-2 w-full h-full aspect-[2/1] items-end">
 				<img className="w-full" src={logoUrl} alt={name} />
 			</figure>
 			<div className="card-body text-center">
