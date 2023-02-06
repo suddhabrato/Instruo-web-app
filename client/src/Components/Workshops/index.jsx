@@ -3,7 +3,7 @@ import WorkshopCard from "./WorkshopCard"
 import HeroSection from "../Shared/HeroSection"
 import axios from "axios"
 import Loader from "../Shared/Loader"
-import soonGif from "../../assets/giphy.webp"
+// import soonGif from "../../assets/giphy.webp"
 
 const Workshops = () => {
 	const [workshops, getWorkshops] = useState()
@@ -44,10 +44,10 @@ const Workshops = () => {
 				</div>
 			) : (
 				<div className="p-10 mt-32 mb-32 flex flex-wrap gap-10 justify-center">
-					{/* {workshops.map((workshop, i) => (
+					{workshops.map((workshop, i) => (
 						<WorkshopCard key={i} {...workshop} />
-					))} */}
-					<img src={soonGif} />
+					))}
+					{/* <img src={soonGif} /> */}
 				</div>
 			)}
 		</div>
