@@ -3,6 +3,7 @@ import WorkshopCard from "./WorkshopCard"
 import HeroSection from "../Shared/HeroSection"
 import axios from "axios"
 import Loader from "../Shared/Loader"
+// import soonGif from "../../assets/giphy.webp"
 
 const Workshops = () => {
 	const [workshops, getWorkshops] = useState()
@@ -25,9 +26,7 @@ const Workshops = () => {
 		<div>
 			<HeroSection
 				title={"Workshops"}
-				desc={
-					""
-				}
+				desc={""}
 				breadParams={[
 					{
 						title: "Instruo",
@@ -48,6 +47,7 @@ const Workshops = () => {
 					{workshops.map((workshop, i) => (
 						<WorkshopCard key={i} {...workshop} />
 					))}
+					{/* <img src={soonGif} /> */}
 				</div>
 			)}
 		</div>

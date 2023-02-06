@@ -23,9 +23,6 @@ const Footer = () => {
 						Sponsors
 					</Link>
 					<Link to="/contactus" className="link link-hover">
-						Contacts
-					</Link>
-					<Link to="/contactus" className="link link-hover">
 						Our Team
 					</Link>
 				</div>
