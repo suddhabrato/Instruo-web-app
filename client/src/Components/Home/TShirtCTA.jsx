@@ -1,15 +1,98 @@
 import React from "react";
-import tshirt from "../../assets/tshirt.png";
+import tshirtfront from "../../assets/Carousel_Tshirt/tshirt_front.png";
+import tshirtback from "../../assets/Carousel_Tshirt/tshirt_back.png";
+import tshirtdesign from "../../assets/Carousel_Tshirt/tshirt_design.png";
+import tshirtfull from "../../assets/Carousel_Tshirt/tshirt_full.png";
 
 const TShirtCTA = () => {
   return (
-    <div className="w-full flex flex-col lg:flex-row py-32 gap-20 bg-base-200 px-8">
-      <div className="lg:w-1/3 mx-4 flex justify-center">
-        <div className="p-8 border-8 -skew-x-6 -skew-y-3 border-primary w-72 h-72 lg:w-96 lg:h-96 shadow-xl hover:brightness-110 transition-all duration-300">
-          <img
-            className="relative inset -top-24 w-72 h-72 lg:w-80 lg:h-96 hover:shadow-3xl hover:-translate-y-4 transition-all duration-300 hover:scale-105 brightness-100"
-            src={tshirt}
-          />
+    <div className="w-full flex flex-col lg:flex-row py-32 gap-16 bg-base-200 px-4 lg:px-16">
+      <div className="lg:w-1/3 mx-4 flex justify-center items-center">
+        <div
+          id="carouselExampleCaptions1"
+          className="carousel slide relative carousel-fade carousel-dark shadow-xl rounded-2xl border-4 border-primary my-12 w-96 py-2"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-indicators absolute bottom-4 left-0 flex flex-col gap-6 p-0 mb-8 ml-4 opacity-80">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions1"
+              data-bs-slide-to="0"
+              className="active border-t-0 border-2 border-primary"
+              aria-current="true"
+              aria-label="Slide 1"
+            >
+              <img
+                src={tshirtfront}
+                className="object-cover w-9 h-9 ring-1 p-0.5 ring-primary rounded-md"
+              />
+            </button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions1"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            >
+              <img
+                src={tshirtback}
+                className="object-cover w-9 h-9 ring-1 p-0.5 ring-primary rounded-md"
+              />
+            </button>
+            <button
+              className=""
+              type="button"
+              data-bs-target="#carouselExampleCaptions1"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            >
+              <img
+                src={tshirtfull}
+                className="object-contain w-9 h-9 ring-1 p-0.5 ring-primary rounded-md"
+              />
+            </button>
+            <button
+              className=""
+              type="button"
+              data-bs-target="#carouselExampleCaptions1"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            >
+              <img
+                src={tshirtdesign}
+                className="object-contain w-9 h-9 ring-1 p-0.5 ring-primary rounded-md"
+              />
+            </button>
+          </div>
+          <div className="carousel-inner relative w-full overflow-hidden ml-8">
+            <div className="carousel-item active relative float-left w-full">
+              <img
+                src={tshirtfront}
+                className="block w-full h-96 object-cover p-4"
+                alt="..."
+              />
+            </div>
+            <div className="carousel-item relative float-left w-full">
+              <img
+                src={tshirtback}
+                className="block w-full h-96 object-cover p-4"
+                alt="..."
+              />
+            </div>
+            <div className="carousel-item relative float-left w-full">
+              <img
+                src={tshirtfull}
+                className="block w-full h-96 object-contain lg:p-4 pl-8"
+                alt="..."
+              />
+            </div>
+            <div className="carousel-item relative float-left w-full">
+              <img
+                src={tshirtdesign}
+                className="block w-full h-96 object-contain lg:p-4 pl-8 py-8"
+                alt="..."
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="w-full px-4 flex flex-col justify-center items-center lg:items-start">

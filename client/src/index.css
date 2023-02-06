@@ -30,6 +30,11 @@
 	display: none;
 }
 
+.carousel-dark .carousel-indicators [data-bs-target] {
+    background-color: transparent;
+	opacity: 1;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
