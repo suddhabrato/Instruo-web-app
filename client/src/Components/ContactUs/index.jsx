@@ -5,6 +5,7 @@ import ContactCard from "./ContactCard"
 
 import kshitij from "../../assets/team/kshitij.jpg"
 import arnab from "../../assets/team/arnab.jfif"
+import supriyo from "../../assets/team/supriyo.jfif"
 import rangan from "../../assets/team/rangan.jfif"
 import rajesh from "../../assets/team/rajesh.jfif"
 
@@ -79,9 +80,10 @@ const ContactUs = () => {
 						linkedinUrl="https://www.linkedin.com/in/rangan-das-7550951a5/"
 					/>
 					<ContactCard
+						avatarImg={supriyo}
 						name="Supriyo Paul"
 						role="Publicity Team"
-						linkedinUrl=""
+						linkedinUrl="https://www.linkedin.com/in/supriyo-paul-a6ba34200/"
 					/>
 					<ContactCard
 						avatarImg={rajesh}
