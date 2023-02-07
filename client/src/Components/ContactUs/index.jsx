@@ -8,6 +8,12 @@ import sudo from "../../assets/team/sudo.jpeg";
 import debopriya from "../../assets/team/debopriya.jpeg";
 import aditya from "../../assets/team/aditya.jpeg";
 
+import pranshu from "../../assets/team/pranshu.jpg";
+import nitu from "../../assets/team/nitu.jpg";
+import ayan from "../../assets/team/ayan.jpg";
+import moulindu from "../../assets/team/moulindu.jpg";
+import souvik from "../../assets/team/souvik.jpg";
+
 const ContactUs = () => {
   const [tabActive, setTabActive] = useState(2);
   return (
@@ -48,9 +54,36 @@ const ContactUs = () => {
       </div>
       {tabActive === 1 && (
         <div className="flex flex-wrap gap-10 p-10 justify-center">
-          <ContactCard />
-          <ContactCard />
-          <ContactCard />
+          <ContactCard
+            avatarImg={souvik}
+            name="Souvik Sengupta"
+            role="Designer"
+            linkedinUrl="https://www.linkedin.com/in/souvik-sengupta-059a99156/"
+          />
+          <ContactCard
+            avatarImg={moulindu}
+            name="Moulindu Mandal"
+            role="Designer"
+            linkedinUrl="https://www.linkedin.com/in/moulindu-mandal-20a728215/"
+          />
+          <ContactCard
+            avatarImg={ayan}
+            name="Ayan Chatterjee"
+            role="Designer"
+            linkedinUrl="https://www.linkedin.com/in/ayan-chatterjee-5025481a2/"
+          />
+          <ContactCard
+            avatarImg={nitu}
+            name="Nitu Saha"
+            role="Designer"
+            linkedinUrl="https://www.linkedin.com/in/nitu-saha-171bab152/"
+          />
+          <ContactCard
+            avatarImg={pranshu}
+            name="Pranshu Singhal"
+            role="Designer"
+            linkedinUrl="https://www.linkedin.com/in/pranshu-singhal-bb11941a0/"
+          />
         </div>
       )}
       {tabActive === 2 && (

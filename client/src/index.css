@@ -35,6 +35,11 @@
 	opacity: 1;
 }
 
+.carousel-dark .carousel-indicators .active img{
+	transition: all ease-in 300ms;
+	--tw-ring-color: hsl(var(--p))
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

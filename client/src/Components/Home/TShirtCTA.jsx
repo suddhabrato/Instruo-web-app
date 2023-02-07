@@ -6,14 +6,14 @@ import tshirtfull from "../../assets/Carousel_Tshirt/tshirt_full.png";
 
 const TShirtCTA = () => {
   return (
-    <div className="w-full flex flex-col lg:flex-row py-32 gap-16 bg-base-200 px-4 lg:px-16">
+    <div className="w-full flex flex-col lg:flex-row py-24 gap-16 bg-base-200 px-4 lg:px-16">
       <div className="lg:w-1/3 mx-4 flex justify-center items-center">
         <div
           id="carouselExampleCaptions1"
           className="carousel slide relative carousel-fade carousel-dark shadow-xl rounded-2xl border-4 border-primary my-12 w-96 py-2"
           data-bs-ride="carousel"
         >
-          <div className="carousel-indicators absolute bottom-4 left-0 flex flex-col gap-6 p-0 mb-8 ml-4 opacity-80">
+          <div className="carousel-indicators absolute bottom-4 left-0 flex flex-col gap-7 p-0 mb-8 ml-4 opacity-80">
             <button
               type="button"
               data-bs-target="#carouselExampleCaptions1"
@@ -24,7 +24,7 @@ const TShirtCTA = () => {
             >
               <img
                 src={tshirtfront}
-                className="object-cover w-9 h-9 ring-1 p-0.5 ring-primary rounded-md"
+                className="object-cover w-9 h-9 ring-2 p-0.5 ring-base-100 rounded-md transition duration-300"
               />
             </button>
             <button
@@ -35,7 +35,7 @@ const TShirtCTA = () => {
             >
               <img
                 src={tshirtback}
-                className="object-cover w-9 h-9 ring-1 p-0.5 ring-primary rounded-md"
+                className="object-cover w-9 h-9 ring-2 p-0.5 ring-base-100 rounded-md transition duration-300"
               />
             </button>
             <button
@@ -47,7 +47,7 @@ const TShirtCTA = () => {
             >
               <img
                 src={tshirtfull}
-                className="object-contain w-9 h-9 ring-1 p-0.5 ring-primary rounded-md"
+                className="object-contain w-9 h-9 ring-2 p-0.5 ring-base-100 rounded-md transition duration-300"
               />
             </button>
             <button
@@ -59,7 +59,7 @@ const TShirtCTA = () => {
             >
               <img
                 src={tshirtdesign}
-                className="object-contain w-9 h-9 ring-1 p-0.5 ring-primary rounded-md"
+                className="object-contain w-9 h-9 ring-2 p-0.5 ring-base-100 rounded-md transition duration-300"
               />
             </button>
           </div>
