@@ -3,14 +3,25 @@ import React, { useState } from "react"
 import HeroSection from "../Shared/HeroSection"
 import ContactCard from "./ContactCard"
 
+import kshitij from "../../assets/team/kshitij.jpg"
+import arnab from "../../assets/team/arnab.jfif"
+import rangan from "../../assets/team/rangan.jfif"
+import rajesh from "../../assets/team/rajesh.jfif"
+
 import devanshu from "../../assets/team/devanshu.jpg"
 import sudo from "../../assets/team/sudo.jpeg"
 import debopriya from "../../assets/team/debopriya.jpeg"
 import aditya from "../../assets/team/aditya.jpeg"
 
+import bhavesh from "../../assets/team/bhavesh.jfif"
+import adityaRay from "../../assets/team/aditya.jfif"
+import prajwal from "../../assets/team/prajwal.jfif"
+import shivam from "../../assets/team/shivam.jfif"
+import jainendra from "../../assets/team/jainendra.jpg"
 import ayan from "../../assets/team/ayan.jpg"
 import moulindu from "../../assets/team/moulindu.jpg"
 import souvik from "../../assets/team/souvik.jpg"
+import varnit from "../../assets/team/varnit.jpeg"
 
 const ContactUs = () => {
 	const [tabActive, setTabActive] = useState(2)
@@ -50,31 +61,30 @@ const ContactUs = () => {
 			{tabActive === 1 && (
 				<div className="flex flex-wrap gap-10 p-10 justify-center max-w-7xl mx-auto">
 					<ContactCard
-						avatarImg={{}}
+						avatarImg={kshitij}
 						name="Kshitij Gupta"
 						role="Sponsorship Team"
 						linkedinUrl="https://www.linkedin.com/in/kshitij-gupta-900887241/"
 					/>
 					<ContactCard
-						avatarImg={{}}
+						avatarImg={arnab}
 						name="Arnab Sharma"
 						role="Sponsorship Team"
 						linkedinUrl="https://www.linkedin.com/in/arnab-sharma-56733118b/"
 					/>
 					<ContactCard
-						avatarImg={{}}
+						avatarImg={rangan}
 						name="Rangan Das"
 						role="Publicity Team"
 						linkedinUrl="https://www.linkedin.com/in/rangan-das-7550951a5/"
 					/>
 					<ContactCard
-						avatarImg={{}}
 						name="Supriyo Paul"
 						role="Publicity Team"
 						linkedinUrl=""
 					/>
 					<ContactCard
-						avatarImg={{}}
+						avatarImg={rajesh}
 						name="Rajesh Jaiswar"
 						role="Publicity Team"
 						linkedinUrl="https://www.linkedin.com/in/rajesh-jaiswar1810/"
@@ -112,43 +122,41 @@ const ContactUs = () => {
 			{tabActive === 3 && (
 				<div className="flex flex-wrap gap-10 p-10 justify-center max-w-7xl mx-auto">
 					<ContactCard
-						avatarImg={{}}
+						avatarImg={bhavesh}
 						name="Bhavesh Sonkar"
 						role="Main Coordinator"
 						linkedinUrl="https://www.linkedin.com/in/bhavesh-sonkar-3a0122201/"
 					/>
 					<ContactCard
-						avatarImg={{}}
+						avatarImg={adityaRay}
 						name="Aditya Kumar Ray"
 						role="Main Coordinator"
 						linkedinUrl="https://www.linkedin.com/in/aditya-kumar-ray/"
 					/>
 					<ContactCard
-						avatarImg={{}}
 						name="Nishita Chaudhari"
 						role="Main Coordinator"
 						linkedinUrl="https://www.linkedin.com/in/nishita-chaudhuri-14751319b/"
 					/>
 					<ContactCard
-						avatarImg={{}}
+						avatarImg={prajwal}
 						name="Prajwal Nakade"
 						role="Finance Team"
 						linkedinUrl="https://www.linkedin.com/in/prajwal-nakade-0971981aa/"
 					/>
 					<ContactCard
-						avatarImg={{}}
+						avatarImg={shivam}
 						name="Shivam Kumar"
 						role="Finance Team"
-						linkedinUrl=""
+						linkedinUrl="https://www.linkedin.com/in/shivam-kumar-2965721ab/"
 					/>
 					<ContactCard
-						avatarImg={{}}
+						avatarImg={jainendra}
 						name="Jainendra Kumar Triloki"
 						role="Finance Team"
 						linkedinUrl="https://www.linkedin.com/in/jainendra-kumar-triloki-337432252/"
 					/>
 					<ContactCard
-						avatarImg={{}}
 						name="Shubham Sahai"
 						role="TA & Logistics"
 						linkedinUrl="https://www.linkedin.com/in/shubham-sahai-716556220/"
@@ -169,6 +177,12 @@ const ContactUs = () => {
 						avatarImg={ayan}
 						name="Ayan Chatterjee"
 						role="Design Team"
+						linkedinUrl="https://www.linkedin.com/in/ayan-chatterjee-5025481a2/"
+					/>
+					<ContactCard
+						avatarImg={varnit}
+						name="Varnit Jain"
+						role="Audio Visual Team"
 						linkedinUrl="https://www.linkedin.com/in/ayan-chatterjee-5025481a2/"
 					/>
 				</div>

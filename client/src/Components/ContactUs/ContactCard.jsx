@@ -9,7 +9,7 @@ const ContactCard = ({ avatarImg, name, role, linkedinUrl }) => {
 					src={avatarImg}
 				/>
 			) : (
-				<div className="mask mask-squircle w-40 h-40 bg-base-200 p-8">
+				<div className="mask mask-squircle w-44 h-44 bg-base-200 p-8">
 					<svg
 						fill="none"
 						stroke="currentColor"

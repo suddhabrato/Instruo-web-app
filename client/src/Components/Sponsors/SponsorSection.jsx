@@ -1,6 +1,9 @@
 import React from "react"
 import SponsorCard from "./SponsorCard"
 
+import DTS from "../../assets/sponsors/DTS.jpeg"
+import sears from "../../assets/sponsors/sears.jpg"
+
 const SponsorSection = ({ title, bg }) => {
 	return (
 		<div
@@ -9,7 +12,7 @@ const SponsorSection = ({ title, bg }) => {
 				<h2 className="mt-16 mb-2 text-5xl font-extrabold md:text-6xl">
 					{title}
 				</h2>
-				<div className="p-6 not-prose grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 my-10 gap-6">
+				<div className="p-6 not-prose grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 my-10 gap-6">
 					<SponsorCard
 						name="Coding Ninjas"
 						logoUrl="https://files.codingninjas.in/0000000000000723.jpg"
@@ -28,8 +31,9 @@ const SponsorSection = ({ title, bg }) => {
 					/>
 					<SponsorCard
 						name="DTS (Deepak Tea Station)"
-						logoUrl="https://lh3.googleusercontent.com/HEWv4kjFAu21IaIWEV0yz4TjDJ4wmc-CGed5NtTFPrOR3j8-bsBibu1pzbKWa8EN1GJ00y3HsLdJrNxr-Rr7yWTn1l0=w256-rw"
+						logoUrl={DTS}
 					/>
+					<SponsorCard name="Sears Holdings India" logoUrl={sears} />
 				</div>
 			</div>
 		</div>
