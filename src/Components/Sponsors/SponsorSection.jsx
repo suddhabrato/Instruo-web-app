@@ -4,6 +4,7 @@ import SponsorCard from "./SponsorCard"
 import DTS from "../../assets/sponsors/DTS.jpeg"
 import sears from "../../assets/sponsors/sears.png"
 import SDLC from "../../assets/sponsors/SDLC.png"
+import iic from "../../assets/sponsors/iic.png"
 
 const SponsorSection = ({ title, bg }) => {
 	return (
@@ -38,6 +39,10 @@ const SponsorSection = ({ title, bg }) => {
 					<SponsorCard
 						name="DTS (Deepak Tea Station)"
 						logoUrl={DTS}
+					/>
+					<SponsorCard
+						name="Institution's Innovation Council"
+						logoUrl={iic}
 					/>
 				</div>
 			</div>
