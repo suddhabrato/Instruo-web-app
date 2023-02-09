@@ -9,6 +9,8 @@ const Register = ({
 	eventId,
 	team,
 	registration_amount,
+	payment_link_iiest,
+	payment_link,
 }) => {
 	const { loginUser } = useStateContext()
 
@@ -46,24 +48,40 @@ const Register = ({
 			</div>
 			<div className="hero-content px-8 md:px-4 mx-auto flex flex-col">
 				{isRegistered ? (
-					<div className="alert alert-success shadow-lg">
-						<div>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								className="stroke-current flex-shrink-0 h-6 w-6"
-								fill="none"
-								viewBox="0 0 24 24">
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-								/>
-							</svg>
-							<span>
-								Congratulations! You are registered for this
-								event!
-							</span>
+					<div className="w-full">
+						<div className="alert alert-success shadow-lg">
+							<div>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									className="stroke-current flex-shrink-0 h-6 w-6"
+									fill="none"
+									viewBox="0 0 24 24">
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth="2"
+										d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+									/>
+								</svg>
+								<span>
+									Congratulations! You are registered for this
+									event!
+								</span>
+							</div>
+						</div>
+						<div className="mt-4 flex justify-around">
+							<a
+								className="btn btn-secondary"
+								href={payment_link_iiest}
+								target="_blank">
+								REGISTER (IIEST)
+							</a>
+							<a
+								className="btn btn-secondary"
+								href={payment_link}
+								target="_blank">
+								REGISTER (NON-IIEST)
+							</a>
 						</div>
 					</div>
 				) : (
