@@ -16,7 +16,7 @@ import debopriya from "../../assets/team/debopriya.jpeg"
 import aditya from "../../assets/team/aditya.jpeg"
 
 import bhavesh from "../../assets/team/bhavesh.jfif"
-import adityaRay from "../../assets/team/aditya.jfif"
+import adityaRay from "../../assets/team/adityaRay.jpeg"
 import prajwal from "../../assets/team/prajwal.jfif"
 import shivam from "../../assets/team/shivam.jfif"
 import jainendra from "../../assets/team/jainendra.jpg"
@@ -32,6 +32,8 @@ import tiyasa from "../../assets/team/tiyasa.jpg"
 import sarnava from "../../assets/team/sarnava.jpg"
 import preet from "../../assets/team/preet.jpg"
 import anamitra from "../../assets/team/anamitra.jpg"
+import ayush from "../../assets/team/ayush.jpg"
+import rohan from "../../assets/team/rohan.jpeg"
 
 const ContactUs = () => {
 	const [tabActive, setTabActive] = useState(8)
@@ -238,11 +240,14 @@ const ContactUs = () => {
 						linkedinUrl="https://www.linkedin.com/in/souvik-sengupta-059a99156/"
 					/>
 					<ContactCard
-						avatarImg={
-							"https://media.licdn.com/dms/image/C4D03AQF_JOXe8H2xPw/profile-displayphoto-shrink_200_200/0/1667999049137?e=1681344000&v=beta&t=0RNXBtYD8rC2sZq1qiKUEwTHijYz-cBhTFB_nYJTKLI"
-						}
+						avatarImg={ayush}
 						name="Ayush Jaiswal"
 						linkedinUrl="https://www.linkedin.com/in/ayush-jaiswal-ab8a491a6"
+					/>
+					<ContactCard
+						avatarImg={rohan}
+						name="Rohan Somadder"
+						linkedinUrl="https://www.linkedin.com/in/rohan-somadder"
 					/>
 				</div>
 			)}
