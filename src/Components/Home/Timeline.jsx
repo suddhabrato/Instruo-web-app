@@ -7,13 +7,13 @@ const Timeline = () => {
 				Our Timeline
 			</h2>
 			<ul className="steps steps-vertical lg:steps-horizontal mt-8">
-				<li className="step" data-content="★">
+				<li className="step step-primary" data-content="✓">
 					Inaugration Ceremony
 				</li>
 				{/* <li className="step" data-content="✓">
 					Inaugration Ceremony
 				</li> */}
-				<li className="step" data-content="★">
+				<li className="step step-primary" data-content="★">
 					Day 1 Events
 				</li>
 				<li className="step" data-content="★">

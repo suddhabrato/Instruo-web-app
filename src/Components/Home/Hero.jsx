@@ -38,7 +38,7 @@ const Hero = ({ aboutRef }) => {
 						</button>
 					</Link> */}
 					<div className="text-xl font-bold uppercase animate-pulse">
-						to start
+						day 1 live!
 					</div>
 				</div>
 			</div>
