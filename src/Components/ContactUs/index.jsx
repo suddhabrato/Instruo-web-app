@@ -21,6 +21,7 @@ import prajwal from "../../assets/team/prajwal.jfif"
 import shivam from "../../assets/team/shivam.jfif"
 import jainendra from "../../assets/team/jainendra.jpg"
 import ayan from "../../assets/team/ayan.jpg"
+import souvik from "../../assets/team/souvik.jpg"
 import moulindu from "../../assets/team/moulindu.jpg"
 
 import vivek from "../../assets/team/vivek.jpg"
@@ -151,6 +152,13 @@ const ContactUs = () => {
 						name="Shubham Sahai"
 						linkedinUrl="https://www.linkedin.com/in/shubham-sahai-716556220/"
 					/>
+					<ContactCard
+						avatarImg={
+							"https://media.licdn.com/dms/image/D4D03AQEeIeEmq03NaQ/profile-displayphoto-shrink_200_200/0/1675316354392?e=1681344000&v=beta&t=6KvYXr3ljP_aiQacXYvLAForZU7BhV2sFnc6og8dkyg"
+						}
+						name="Pulok Haldar"
+						linkedinUrl="https://www.linkedin.com/in/pulok-haldar-45292b1b8/"
+					/>
 				</div>
 			)}
 			{tabActive === 5 && (
@@ -224,6 +232,18 @@ const ContactUs = () => {
 						name="Preet Yadav"
 						linkedinUrl="https://www.linkedin.com/in/preet-yadav-789b78179/"
 					/>
+					<ContactCard
+						avatarImg={souvik}
+						name="Souvik Sengupta"
+						linkedinUrl="https://www.linkedin.com/in/souvik-sengupta-059a99156/"
+					/>
+					<ContactCard
+						avatarImg={
+							"https://media.licdn.com/dms/image/C4D03AQF_JOXe8H2xPw/profile-displayphoto-shrink_200_200/0/1667999049137?e=1681344000&v=beta&t=0RNXBtYD8rC2sZq1qiKUEwTHijYz-cBhTFB_nYJTKLI"
+						}
+						name="Ayush Jaiswal"
+						linkedinUrl="https://www.linkedin.com/in/ayush-jaiswal-ab8a491a6"
+					/>
 				</div>
 			)}
 			{tabActive === 8 && (
@@ -255,6 +275,13 @@ const ContactUs = () => {
 					<ContactCard
 						name="Ritwik Mandal"
 						linkedinUrl="https://www.linkedin.com/in/ritwik-mandal-3487101a5/"
+					/>
+					<ContactCard
+						avatarImg={
+							"https://pps.whatsapp.net/v/t61.24694-24/319718301_6108548152529662_252048190625567867_n.jpg?ccb=11-4&oh=01_AdRGuwUeCvYmNlXcitY0KxkVrYahvYjcsf3W0wcSVaIHvg&oe=63F2FD24"
+						}
+						name="Abhishek Gupta"
+						linkedinUrl="https://www.linkedin.com/in/abhishek-gupta-0176aa1b5/"
 					/>
 				</div>
 			)}
