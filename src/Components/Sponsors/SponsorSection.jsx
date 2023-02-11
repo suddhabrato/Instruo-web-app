@@ -2,7 +2,9 @@ import React from "react"
 import SponsorCard from "./SponsorCard"
 
 import DTS from "../../assets/sponsors/DTS.jpeg"
-import sears from "../../assets/sponsors/sears.jpg"
+import sears from "../../assets/sponsors/sears.png"
+import SDLC from "../../assets/sponsors/SDLC.png"
+import iic from "../../assets/sponsors/iic.png"
 
 const SponsorSection = ({ title, bg }) => {
 	return (
@@ -13,13 +15,18 @@ const SponsorSection = ({ title, bg }) => {
 					{title}
 				</h2>
 				<div className="p-6 not-prose grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 my-10 gap-6">
+					<SponsorCard name="Sears Holdings India" logoUrl={sears} />
+					<SponsorCard
+						name="Sears Deep Learning Centre"
+						logoUrl={SDLC}
+					/>
 					<SponsorCard
 						name="Coding Ninjas"
 						logoUrl="https://files.codingninjas.in/0000000000000723.jpg"
 					/>
 					<SponsorCard
 						name="T.I.M.E"
-						logoUrl="https://scontent.fmaa8-1.fna.fbcdn.net/v/t39.30808-6/325987269_869845554291316_7388624397662696654_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=nAfw69BJQLUAX_jkB0a&_nc_ht=scontent.fmaa8-1.fna&oh=00_AfB4L8I9Hrh9IX2oqbTbqDaGCR4yArSMECTSMB1JozYsIQ&oe=63E52C23"
+						logoUrl="https://directory.edugorilla.com/wp-content/uploads/sites/6/2017/01/logo_04.jpg"
 					/>
 					<SponsorCard
 						name="Erudite"
@@ -33,7 +40,10 @@ const SponsorSection = ({ title, bg }) => {
 						name="DTS (Deepak Tea Station)"
 						logoUrl={DTS}
 					/>
-					<SponsorCard name="Sears Holdings India" logoUrl={sears} />
+					<SponsorCard
+						name="Institution's Innovation Council"
+						logoUrl={iic}
+					/>
 				</div>
 			</div>
 		</div>
